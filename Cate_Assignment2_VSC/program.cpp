@@ -14,7 +14,7 @@ int main()
     
     for (int i = 0; i <  instructorsLength; ++i) 
     {
-        cout << i <<") " << instructors[i] << endl;
+        cout << i << ") " << instructors[i] << endl;
     }
 
     getchar();
