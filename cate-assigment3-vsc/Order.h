@@ -1,41 +1,41 @@
-#include <iostream>
+#include <fstream>
+
 
 using namespace std;
 
 class Order {
 	private:
-		int inventory;
 		int backOrder;
 		int spoolsToOrder;
-
+		int spoolsReadyToShip;
+		int shippingAndHandling;
+		
 	public:
-		Order(int i) {
-			inventory = i;
-		}
-		Order()
-		{
-
-		}
-		// Getters
-		void SetInventory(int i) {
-			inventory = i;
-		}
+		// Setters
 		void SetBackOrder(int b) {
 			backOrder = b;
 		}
 		void SetSpoolsToOrder(int s) {
 			spoolsToOrder = s;
 		}
-
-		// Setters
-		int GetInventory() {
-			return inventory;
+		void SetSpoolsReadyToShip(int s) {
+			spoolsReadyToShip = s;
 		}
+		void SetShippingAndHandling(int s) {
+			shippingAndHandling = s;
+		}
+
+		// Getters
 		int GetBackOrder() {
 			return backOrder;
 		}
 		int GetSpoolsToOrder() {
 			return spoolsToOrder;
 		}
-
+		int GetSpoolsReadyToShip() {
+			return spoolsReadyToShip;
+		}
+		int GetShippingAndHandling() {
+			return shippingAndHandling;
+		}
 };

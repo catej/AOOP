@@ -142,7 +142,7 @@
     <ClCompile Include="..\..\cate-assigment3-vsc\program.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\cate-assigment3-vsc\App.h" />
+    <ClInclude Include="..\..\cate-assigment3-vsc\Store.h" />
     <ClInclude Include="..\..\cate-assigment3-vsc\Order.h" />
   </ItemGroup>
   <ItemGroup>
