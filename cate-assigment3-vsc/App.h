@@ -13,31 +13,41 @@ class App {
     public:
         void Run()
         {
-            Menu();
+            GetCurrentInventory();
+            DisplayMenu();
             TakeOrder();
         }
 
     private:
-    string stockPath = "Inventory.txt";
+        string stockPath = "Inventory.txt";
+        Order order = Order();
+        void DisplayMenu()
+        {
+            cout << "Welcome to Wires\'R\'US\n"
+                 << "---------------------\n\n";
 
-    void Menu()
-    {
-        cout << "Welcome to Wires\'R\'US\n" << "---------------------\n\n";
-        cout << "Spools Available: " << GetStock() << "\n";
-    }
-    int GetStock()
-    {
-        fstream stockFile(stockPath);
-        int stock;
-        stockFile >> stock;
-        stockFile.close();
-        return stock;
-    }
-    void TakeOrder()
-    {
-        int spoolsToOrder;
-        cout << "Spools to order: ";
-        cin >> spoolsToOrder;
-    }
+            cout << "Spools Available: " << "\n";
+        }
 
+        void GetCurrentInventory()
+        {
+            fstream stockFile(stockPath);
+            if (stockFile.is_open())
+            {
+                int inventory;
+                stockFile >> inventory;
+                order.SetInventory(inventory);
+                stockFile.close();
+            }
+        }
+        void SetCurrentInventory(int currentInventory)
+        {
+
+        }
+        void TakeOrder()
+        {
+            int spoolsToOrder, backOrder;
+            cout << "Spools to order: ";
+            cin >> spoolsToOrder;
+        }
 };

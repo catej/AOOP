@@ -16,6 +16,7 @@ int main()
     App application = App();
     application.Run();
 
-    getchar();
+    char the = getchar();
+    the = getchar();
     return 0;
 }
