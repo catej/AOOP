@@ -1,41 +1,67 @@
 #include <fstream>
 
-
 using namespace std;
 
 class Order {
 	private:
-		int backOrder;
+		// quantity variables
 		int spoolsToOrder;
 		int spoolsReadyToShip;
-		int shippingAndHandling;
+		int backOrder;
+		// cost variables
+		double shipping;
+		double totalSpoolCharges;
+		double shippingAndHandlingCharges;
+		double totalThisShipment;
 		
 	public:
 		// Setters
-		void SetBackOrder(int b) {
-			backOrder = b;
-		}
+		// quantity variables
 		void SetSpoolsToOrder(int s) {
 			spoolsToOrder = s;
 		}
 		void SetSpoolsReadyToShip(int s) {
 			spoolsReadyToShip = s;
 		}
-		void SetShippingAndHandling(int s) {
-			shippingAndHandling = s;
+		void SetBackOrder(int b) {
+			backOrder = b;
+		}
+		// cost variables
+		void SetShippingAndHandlingCharges(double s) {
+			shippingAndHandlingCharges = s;
+		}
+		void SetTotalThisShipment(double t) {
+			totalThisShipment = t;
+		}
+		void SetTotalSpoolCharges(double t) {
+			totalSpoolCharges = t;
+		}
+		void SetShipping(double s) {
+			shipping = s;
 		}
 
 		// Getters
-		int GetBackOrder() {
-			return backOrder;
-		}
+		// quantity variables
 		int GetSpoolsToOrder() {
 			return spoolsToOrder;
 		}
 		int GetSpoolsReadyToShip() {
 			return spoolsReadyToShip;
 		}
-		int GetShippingAndHandling() {
-			return shippingAndHandling;
+		int GetBackOrder() {
+			return backOrder;
+		}
+		// cost variables
+		double GetShippingAndHandlingCharges() {
+			return shippingAndHandlingCharges;
+		}
+		double GetTotalThisShipment() {
+			return totalThisShipment;
+		}
+		double GetTotalSpoolCharges() {
+			return totalSpoolCharges;
+		}
+		double GetShipping() {
+			return shipping;
 		}
 };
