@@ -1,7 +1,5 @@
 #include <iostream>
-#include <vector>
-#include <string>
-#include "App.h"
+#include "Store.h"
 
 using namespace std;
 
@@ -13,9 +11,10 @@ using namespace std;
 
 int main()
 {
-    App application = App();
-    application.Run();
+    Store store = Store();
+    store.Open();
 
-    getchar();
+    char the = getchar();
+    the = getchar();
     return 0;
 }
