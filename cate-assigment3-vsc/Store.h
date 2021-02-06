@@ -21,8 +21,9 @@ class Store {
 
         void Open()
         {
-            GetCurrentInventory();
+            //GetCurrentInventory();
             DisplayMenu();
+            //PromptCurrentInventory();
             TakeOrder(quantityOrdered, shippingCost);
             //
             // REQUIREMENT 3: (Default argument) determine whether to use default argument or input
@@ -52,6 +53,10 @@ class Store {
                 stockFile.close();
             }
         }
+        void PromptCurrentInventory() {
+            cout << "How many spools are in stock? ";
+            cin >> inventory;
+        }
         void DisplayMenu()
         {
             cout << "Welcome to Wires\'R\'US\n"
@@ -63,9 +68,10 @@ class Store {
         //
         void TakeOrder(int& quantity, int& shipping)
         {
-            cout << "Spools to order: ";
+            cout << "How many spools were ordered? ";
             cin >> quantity;
-            cout << "Amount of any special shipping charges (per spool)\n"
+            PromptCurrentInventory();
+            cout << "\nAmount of any special shipping charges (per spool)\n"
                 << "above the regular $10.00 per spool rate (0 for none): ";
             cin >> shipping;
         }
@@ -112,15 +118,15 @@ class Store {
         void DisplayOrderSummery() {
             cout << "\n\n"
                 
-                 <<"---------------------------------\n"
-                 << "THIS SECTION SHOULD BE FORMATTED \n"
-                 << "ACCORDING TO THE OUTPUT IMAGES!! \n"
-                 << "---------------------------------\n\n"
-
-                 << "How many spools were ordered? " << order.GetSpoolsToOrder() << "\n"
-                 << "How many spools are in stock? " << inventory << "\n\n"
-                 << "Amount of any special shipping charges (per spool)\n"
-                 << "above the regular $10.00 per spool rate (0 for none): " << order.GetShipping() << "\n\n"
+                 //<<"---------------------------------\n"
+                 //<< "THIS SECTION SHOULD BE FORMATTED \n"
+                 //<< "ACCORDING TO THE OUTPUT IMAGES!! \n"
+                 //<< "---------------------------------\n\n"
+                 //
+                 //<< "How many spools were ordered? " << order.GetSpoolsToOrder() << "\n"
+                 //<< "How many spools are in stock? " << inventory << "\n\n"
+                 //<< "Amount of any special shipping charges (per spool)\n"
+                 //<< "above the regular $10.00 per spool rate (0 for none): " << order.GetShipping() << "\n\n"
                  
                  << "   *** Order Summary ***\n\n"
                  
