@@ -29,14 +29,14 @@ Documented and developed by: Jeff Cate
 
 ### To Do:
 
-* [ ] Class: program
-    * [ ] Fields
-        * [ ] Game game
-        * [ ] static? const string heads
-        * [ ] static? const string tails
+* [x] Class: program
+    * [x] Fields
+        * [x] Game game
 
 * [ ] Class: Game
     * [ ] Fields
+        * [ ] const string heads
+        * [ ] const string tails
         * [ ] Coin coin
             * [ ] Quarter
             * [ ] Dime
