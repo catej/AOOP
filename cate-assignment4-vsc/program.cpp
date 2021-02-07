@@ -1,20 +1,16 @@
 #include <iostream>
-#include "Store.h"
 
 using namespace std;
 
 /*
 *        STUDENT : Jeff Cate
 *       COURSE # : ITDEV185-900
-*   ASSIGNMENT # : 3
+*   ASSIGNMENT # : 4 - Coin Game
 */
 
 int main()
 {
-    Store store = Store();
-    store.Open();
-
-    char the = getchar();
-    the = getchar();
+    
+    char exit = getchar();
     return 0;
 }
