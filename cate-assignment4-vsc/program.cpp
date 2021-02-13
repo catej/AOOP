@@ -9,7 +9,7 @@
 int main()
 {
     Game game = Game();
-    game.playGame();
+    game.test();
 
     char exit = getchar();
     return 0;
