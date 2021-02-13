@@ -43,7 +43,7 @@ Documented and developed by: Jeff Cate
             * [x] Nickel
         * [x] double playerBalance
         * [x] bool gameOver
-        * [ ] bool isWin
+        * [x] bool isWin
     * [ ] Methods
         * [x] Game
             * [x] initialize player's balance
@@ -57,8 +57,8 @@ Documented and developed by: Jeff Cate
             * [ ] bool checkGameOver
         * [ ] flipCoins
         * [ ] void evaluateCoinFlips
-        * [ ] bool checkIfGameOver
-        * [ ] bool checkForkWin
+        * [x] bool checkIfGameOver
+        * [x] bool checkForkWin
         * [ ] void displayResults
 
 * [x] Class: Coin

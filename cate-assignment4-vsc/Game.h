@@ -33,30 +33,5 @@ class Game {
         }
         void test(){
             
-            playerBalance = 1;
-            cout << "1: " << checkForWin() << "\n";
-
-            playerBalance = 1.00;
-            cout << "1: " << checkForWin() << "\n";
-
-            playerBalance = 1.0;
-            cout << "1: " << checkForWin() << "\n";
-
-            playerBalance = .99;
-            cout << "0: " << checkForWin() << "\n";
-
-            playerBalance = 1.05;
-            cout << "0: " << checkForWin() << "\n";
-
-            playerBalance = 1.10;
-            cout << "0: " << checkForWin() << "\n";
-
-            playerBalance = 1.25;
-            cout << "0: " << checkForWin() << "\n";
-
-            playerBalance = 1.15;
-            cout << "0: " << checkForWin() << "\n";
-
-
         }
 };
