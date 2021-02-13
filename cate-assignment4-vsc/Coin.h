@@ -9,6 +9,7 @@ class Coin {
         double value;
 
     public:
+        Coin() {}
         Coin(double v) {
             value = v;
             sideUp = rand() % 2 == 0 ? "HEADS" : "tails";

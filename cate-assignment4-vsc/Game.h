@@ -1,5 +1,6 @@
 #include <iostream>
-#include <string> 
+#include <string>
+#include "Coin.h"
 
 using namespace std;
 
@@ -9,7 +10,10 @@ class Game {
         const string tails = "tails";
         Coin quarter;
         Coin dime;
+        Coin nickel;
         
     public:
-    Game()
+        Game(){
+
+        }
 };
