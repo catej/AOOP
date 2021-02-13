@@ -34,19 +34,19 @@ Documented and developed by: Jeff Cate
         * [x] Game game
 
 * [ ] Class: Game
-    * [ ] Fields
-        * [ ] const string heads
-        * [ ] const string tails
-        * [ ] Coin coin
-            * [ ] Quarter
-            * [ ] Dime
-            * [ ] Nickel
-        * [ ] double playerBalance
-        * [ ] bool gameOver
+    * [x] Fields
+        * [x] const string heads
+        * [x] const string tails
+        * [x] Coin coin
+            * [x] Quarter
+            * [x] Dime
+            * [x] Nickel
+        * [x] double playerBalance
+        * [x] bool gameOver
     * [ ] Methods
         * [ ] Game
-            * [ ] initialize player's balance
-            * [ ] make each coin
+            * [x] initialize player's balance
+            * [x] initialize make each coin
         * [ ] void playGame
             * [ ] bool playRound
             * [ ] void displayResults
