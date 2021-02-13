@@ -1,6 +1,4 @@
-#include <iostream>
-
-using namespace std;
+#include "Game.h"
 
 /*
 *        STUDENT : Jeff Cate
@@ -10,7 +8,9 @@ using namespace std;
 
 int main()
 {
-    
+    Game game = Game();
+    game.playGame();
+
     char exit = getchar();
     return 0;
 }

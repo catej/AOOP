@@ -18,7 +18,7 @@ Documented and developed by: Jeff Cate
 ### ~~ Round ~~
 
     1) Each round the player flips each coin once.
-    2) If the coind lands heads up add the value to the player's balance.
+    2) If the coin lands heads up add the value to the player's balance.
 
 ### ~~ End of Game ~~
 
@@ -29,18 +29,25 @@ Documented and developed by: Jeff Cate
 
 ### To Do:
 
-* [ ] Class: program
-    * [ ] Fields
-        * [ ] Game game
-        * [ ] double playerBalance
-        * [ ] static? rng coinFlipper
-        * [ ] static? const string heads
-        * [ ] static? const string tails
+* [x] Class: program
+    * [x] Fields
+        * [x] Game game
+
+* [ ] Class: Game
+    * [x] Fields
+        * [x] const string heads
+        * [x] const string tails
+        * [x] Coin coin
+            * [x] Quarter
+            * [x] Dime
+            * [x] Nickel
+        * [x] double playerBalance
+        * [x] bool gameOver
     * [ ] Methods
         * [ ] Game
-            * [ ] initialize player's balance
-            * [ ] make each coin
-        * [ ] playGame
+            * [x] initialize player's balance
+            * [x] initialize make each coin
+        * [ ] void playGame
             * [ ] bool playRound
             * [ ] void displayResults
         * [ ] bool playRound
@@ -49,25 +56,16 @@ Documented and developed by: Jeff Cate
             * [ ] bool checkGameOver
         * [ ] void displayResults
 
-* [ ] Class: Game
-    * [ ] Fields
-        * [ ] Coin coin
-            * [ ] Quarter
-            * [ ] Dime
-            * [ ] Nickel
-        * [ ] double playerBalance
-        * [ ] bool gameOver
-
-* [ ] Class: Coin
-    * [ ] Fields
-        * [ ] bool heads
-        * [ ] string sideUp
-        * [ ] double value
-    * [ ] Methods
-        * [ ] Coin(double v) - randomly chose side up.
-        * [ ] bool getHeads()
-        * [ ] string getSideUp()
-        * [ ] double getValue()
-        * [ ] void toss - decides heads up
-            * [ ] set sideUp
-            * [ ] set heads
+* [x] Class: Coin
+    * [x] Fields
+        * [x] bool heads
+        * [x] string sideUp
+        * [x] double value
+    * [x] Methods
+        * [x] Coin(double v) - randomly chose side up.
+        * [x] bool getHeads()
+        * [x] string getSideUp()
+        * [x] double getValue()
+        * [x] void toss - decides heads up
+            * [x] set sideUp
+            * [x] set heads
