@@ -24,8 +24,8 @@ class Game {
         void displayResults() {
 
             cout << fixed << setprecision(2)
-                 << "      Game Over: " << (gameOver ? "True" : "False") << "\n "
-                 << "        Winner: " << (checkForWin() ? "True" : "False") << "\n "
+                 << "Game Over: " << (gameOver ? "True" : "False") << "\n "
+                 << "Winner: " << (checkForWin() ? "True" : "False") << "\n "
                  << "Player balance: " << playerBalance << "\n";
         }
         void displayResults(Coin coin) {
@@ -48,13 +48,17 @@ class Game {
         void playRound() {
             flipEachCoin();
             evaluateCoinFlips();
-            round++;
         }
         void displayRound() {
-            displayResults(quarter);
-            displayResults(dime);
-            displayResults(nickel);
-            cout << "Player balance: " << playerBalance << "\n";
+            cout << fixed << setprecision(2)
+                 << "Round " << round << "\n"
+                 << "Quarter: " << (quarter.getHeads() ? "Heads" : "Tails") << "\n"
+                 << "Dime: " << (dime.getHeads() ? "Heads" : "Tails") << "\n"
+                 << "Nickel: " << (nickel.getHeads() ? "Heads" : "Tails") << "\n"
+                 << "Player balance: " << playerBalance << "\n"
+                 << "------------------------\n\n";
+
+            round++;
         }
     public:
         Game(){
@@ -68,7 +72,6 @@ class Game {
         }
         void playGame() {
             while(!gameOver) {
-                cout << "\n\nRound " << round << "\n";
                 playRound();
                 gameOver = checkIfGameOver();
                 displayRound();

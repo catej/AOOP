@@ -8,6 +8,9 @@
 
 int main()
 {
+    unsigned int seed = time(0);
+    srand(seed);
+
     Game game = Game();
     game.playGame();
 
