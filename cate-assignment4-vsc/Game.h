@@ -36,6 +36,11 @@ class Game {
                  << "isHead: " << coin.getHeads() << "\n"
                  << "sideUp: " << coin.getSideUp() << "\n";
         }
+        void flipEachCoin() {
+            quarter.toss();
+            dime.toss();
+            nickel.toss();
+        }
 
     public:
         Game(){
@@ -48,5 +53,13 @@ class Game {
         }
         void test(){
 
+            for (int i = 0; i < 11; i++)
+            {
+                flipEachCoin();
+                displayResults(quarter);
+                displayResults(dime);
+                displayResults(nickel);
+                cout << "\n";
+            }
         }
 };

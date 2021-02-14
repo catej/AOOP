@@ -52,7 +52,7 @@ Documented and developed by: Jeff Cate
             * [ ] bool playRound 
             * [ ] void displayResults
         * [ ] bool playRound
-            * [ ] void flipCoin
+            * [ ] void flipEachCoin
             * [ ] void evaluateCoinFlips
             * [ ] bool checkGameOver
         * [ ] flipCoins
