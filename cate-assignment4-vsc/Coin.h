@@ -1,4 +1,5 @@
 #include <string>
+#include <ctime>
 
 using namespace std;
 
@@ -11,8 +12,10 @@ class Coin {
     public:
         Coin() {}
         Coin(double v) {
+            unsigned seed = time(0);
+            srand(seed);
             value = v;
-            sideUp = rand() % 2 == 0 ? "HEADS" : "tails";
+            sideUp = (rand() % 10000000) % 2 == 0 ? "HEADS" : "tails";
             heads = sideUp == "HEADS" ? true: false;
         }
         bool getHeads(){
@@ -25,7 +28,7 @@ class Coin {
             return value;
         }
         void toss() {
-            sideUp = rand() % 2 == 0 ? "HEADS" : "tails";
+            sideUp = (rand() % 10000000) % 2 == 0 ? "HEADS" : "tails";
             heads = sideUp == "HEADS" ? true: false;
         }
 
