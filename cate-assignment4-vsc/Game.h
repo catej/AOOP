@@ -35,7 +35,6 @@ class Game {
                  << " Value: " << coin.getValue() << "\n"
                  << "isHead: " << coin.getHeads() << "\n"
                  << "sideUp: " << coin.getSideUp() << "\n";
-
         }
 
     public:
