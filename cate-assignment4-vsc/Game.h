@@ -41,6 +41,11 @@ class Game {
             dime.toss();
             nickel.toss();
         }
+        void evaluateCoinFlips() {
+            playerBalance += quarter.getHeads() ? quarter.getValue() : 0;
+            playerBalance += dime.getHeads() ? dime.getValue() : 0;
+            playerBalance += nickel.getHeads() ? nickel.getValue() : 0;
+        }
 
     public:
         Game(){
@@ -59,7 +64,9 @@ class Game {
                 displayResults(quarter);
                 displayResults(dime);
                 displayResults(nickel);
-                cout << "\n";
+                evaluateCoinFlips();
+
+                cout << "\n\nPlayer balance: " << playerBalance << "\n\n";
             }
         }
 };

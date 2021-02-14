@@ -55,7 +55,7 @@ Documented and developed by: Jeff Cate
             * [ ] void flipEachCoin
             * [ ] void evaluateCoinFlips
             * [ ] bool checkGameOver
-        * [ ] flipCoins
+        * [x] flipEachCoin
         * [ ] void evaluateCoinFlips
         * [x] bool checkIfGameOver
         * [x] bool checkForkWin
