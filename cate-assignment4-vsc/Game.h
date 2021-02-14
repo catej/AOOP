@@ -7,8 +7,6 @@ using namespace std;
 
 class Game {
     private:
-        const string HEADS = "HEADS";
-        const string tails = "tails";
         int round;
         bool gameOver;
         bool isWin;
@@ -27,7 +25,7 @@ class Game {
 
             cout << fixed << setprecision(2)
                  << "      Game Over: " << (gameOver ? "True" : "False") << "\n "
-                 << "        Winner: " << (   isWin ? "True" : "False") << "\n "
+                 << "        Winner: " << (checkForWin() ? "True" : "False") << "\n "
                  << "Player balance: " << playerBalance << "\n";
         }
         void displayResults(Coin coin) {
@@ -48,10 +46,15 @@ class Game {
             playerBalance += nickel.getHeads() ? nickel.getValue() : 0;
         }
         void playRound() {
-            cout << "Round " << round << "\n";
             flipEachCoin();
             evaluateCoinFlips();
             round++;
+        }
+        void displayRound() {
+            displayResults(quarter);
+            displayResults(dime);
+            displayResults(nickel);
+            cout << "Player balance: " << playerBalance << "\n";
         }
     public:
         Game(){
@@ -63,16 +66,13 @@ class Game {
             isWin = false;
             round = 1;
         }
-        void test(){
-
-            for (int i = 0; i < 10; i++)
-            {
+        void playGame() {
+            while(!gameOver) {
+                cout << "\n\nRound " << round << "\n";
                 playRound();
-                displayResults(quarter);
-                displayResults(dime);
-                displayResults(nickel);
-
-                cout << "\nPlayer balance: " << playerBalance << "\n";
+                gameOver = checkIfGameOver();
+                displayRound();
             }
+            displayResults();
         }
 };

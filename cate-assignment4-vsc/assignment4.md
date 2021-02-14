@@ -29,13 +29,13 @@ Documented and developed by: Jeff Cate
 
 ### To Do:
 
-* [ ] Fix rng
+* [x] Fix rng
 
 * [x] Class: program
     * [x] Fields
         * [x] Game game
 
-* [ ] Class: Game
+* [x] Class: Game
     * [x] Fields
         * [x] const string heads
         * [x] const string tails
@@ -50,19 +50,19 @@ Documented and developed by: Jeff Cate
         * [x] Game
             * [x] initialize player's balance
             * [x] initialize each coin
-        * [ ] void playGame
-            * [ ] bool playRound 
-            * [ ] bool checkGameOver
-            * [ ] void displayResults
-        * [ ] void playRound
-            * [ ] void flipEachCoin
-            * [ ] void evaluateCoinFlips
+        * [x] void playGame
+            * [x] bool playRound 
+            * [x] bool checkGameOver
+            * [x] void displayResults
+        * [x] void playRound
+            * [x] void flipEachCoin
+            * [x] void evaluateCoinFlips
         * [x] flipEachCoin
         * [x] void evaluateCoinFlips
         * [x] bool checkIfGameOver
         * [x] bool checkForkWin
-        * [ ] void displayResults
-        * [ ] void displayRound
+        * [x] void displayResults
+        * [x] void displayRound
 
 * [x] Class: Coin
     * [x] Fields
