@@ -7,13 +7,14 @@ class Coin {
         bool heads;
         string sideUp;
         double value;
+        const string HEADS = "HEADS";
+        const string tails = "tails";
 
     public:
         Coin() {}
         Coin(double v) {
             value = v;
-            sideUp = rand() % 2 == 0 ? "HEADS" : "tails";
-            heads = sideUp == "HEADS" ? true: false;
+            toss();
         }
         bool getHeads(){
             return heads;
@@ -25,8 +26,8 @@ class Coin {
             return value;
         }
         void toss() {
-            sideUp = rand() % 2 == 0 ? "HEADS" : "tails";
-            heads = sideUp == "HEADS" ? true: false;
+            sideUp = rand() % 2 == 0 ? HEADS : tails;
+            heads = sideUp == HEADS ? true: false;
         }
 
 };

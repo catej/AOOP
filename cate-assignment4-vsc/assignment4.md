@@ -29,6 +29,8 @@ Documented and developed by: Jeff Cate
 
 ### To Do:
 
+* [ ] Fix rng
+
 * [x] Class: program
     * [x] Fields
         * [x] Game game
@@ -50,16 +52,17 @@ Documented and developed by: Jeff Cate
             * [x] initialize each coin
         * [ ] void playGame
             * [ ] bool playRound 
+            * [ ] bool checkGameOver
             * [ ] void displayResults
-        * [ ] bool playRound
+        * [ ] void playRound
             * [ ] void flipEachCoin
             * [ ] void evaluateCoinFlips
-            * [ ] bool checkGameOver
         * [x] flipEachCoin
-        * [ ] void evaluateCoinFlips
+        * [x] void evaluateCoinFlips
         * [x] bool checkIfGameOver
         * [x] bool checkForkWin
         * [ ] void displayResults
+        * [ ] void displayRound
 
 * [x] Class: Coin
     * [x] Fields

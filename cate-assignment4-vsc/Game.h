@@ -9,6 +9,7 @@ class Game {
     private:
         const string HEADS = "HEADS";
         const string tails = "tails";
+        int round;
         bool gameOver;
         bool isWin;
         double playerBalance;
@@ -46,7 +47,12 @@ class Game {
             playerBalance += dime.getHeads() ? dime.getValue() : 0;
             playerBalance += nickel.getHeads() ? nickel.getValue() : 0;
         }
-
+        void playRound() {
+            cout << "Round " << round << "\n";
+            flipEachCoin();
+            evaluateCoinFlips();
+            round++;
+        }
     public:
         Game(){
             quarter = Coin(.25);
@@ -55,18 +61,18 @@ class Game {
             playerBalance = 0;
             gameOver = false;
             isWin = false;
+            round = 1;
         }
         void test(){
 
-            for (int i = 0; i < 11; i++)
+            for (int i = 0; i < 10; i++)
             {
-                flipEachCoin();
+                playRound();
                 displayResults(quarter);
                 displayResults(dime);
                 displayResults(nickel);
-                evaluateCoinFlips();
 
-                cout << "\n\nPlayer balance: " << playerBalance << "\n\n";
+                cout << "\nPlayer balance: " << playerBalance << "\n";
             }
         }
 };
