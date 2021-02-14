@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include <string>
 #include "Coin.h"
 
@@ -21,6 +22,13 @@ class Game {
         bool checkForWin() {
             return playerBalance == 1.00 ? true : false;
         }
+        void displayResults() {
+
+            cout << fixed << setprecision(2)
+                 << "      Game Over: " << (gameOver ? "True" : "False") << "\n "
+                 << "        Winner: " << (   isWin ? "True" : "False") << "\n "
+                 << "Player balance: " << playerBalance << "\n";
+        }
 
     public:
         Game(){
@@ -32,6 +40,9 @@ class Game {
             isWin = false;
         }
         void test(){
-            
+            playerBalance = 1;
+            isWin = true;
+            gameOver = true;
+            displayResults();
         }
 };
