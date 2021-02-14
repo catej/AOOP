@@ -43,17 +43,22 @@ Documented and developed by: Jeff Cate
             * [x] Nickel
         * [x] double playerBalance
         * [x] bool gameOver
+        * [x] bool isWin
     * [ ] Methods
-        * [ ] Game
+        * [x] Game
             * [x] initialize player's balance
-            * [x] initialize make each coin
+            * [x] initialize each coin
         * [ ] void playGame
-            * [ ] bool playRound
+            * [ ] bool playRound 
             * [ ] void displayResults
         * [ ] bool playRound
-            * [ ] void flipEachCoin
+            * [ ] void flipCoin
             * [ ] void evaluateCoinFlips
             * [ ] bool checkGameOver
+        * [ ] flipCoins
+        * [ ] void evaluateCoinFlips
+        * [x] bool checkIfGameOver
+        * [x] bool checkForkWin
         * [ ] void displayResults
 
 * [x] Class: Coin
