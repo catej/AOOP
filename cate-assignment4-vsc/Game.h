@@ -29,6 +29,14 @@ class Game {
                  << "        Winner: " << (   isWin ? "True" : "False") << "\n "
                  << "Player balance: " << playerBalance << "\n";
         }
+        void displayResults(Coin coin) {
+            cout << fixed << setprecision(2)
+                 << "Coin" << "\n"
+                 << " Value: " << coin.getValue() << "\n"
+                 << "isHead: " << coin.getHeads() << "\n"
+                 << "sideUp: " << coin.getSideUp() << "\n";
+
+        }
 
     public:
         Game(){
@@ -40,9 +48,6 @@ class Game {
             isWin = false;
         }
         void test(){
-            playerBalance = 1;
-            isWin = true;
-            gameOver = true;
-            displayResults();
+
         }
 };
