@@ -1,5 +1,4 @@
 #include <iostream>
-#include "Reel.h"
 
 using namespace std;
 
@@ -12,15 +11,6 @@ using namespace std;
 int main() {
 
     srand(time(0));
-
-    Reel reel = Reel();
-    cout << reel.getFace() << "\n";
-
-    for (int  i = 0; i < 10; i++)
-    {
-        reel.spin();
-        cout << reel.getFace() << "\n";
-    }
 
     getchar();
     return 0;
