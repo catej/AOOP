@@ -1,17 +1,17 @@
+#ifndef SlotMachine_H
+#define SlotMachine_H
 #include "Reel.h"
-#include <iostream>
+#include <array>
+
+using namespace std;
 
 class SlotMachine {
-    private:
-        Reel reels[3] = { Reel(), Reel(), Reel() };
-
     public:
-        void displayFaces() {
-            for (int i = 0; i < 3 ; i++)
-            {
-                cout << "*" << reels[i].getFace() << "";
-            }
-            cout << " *\n";           
-        }
-        
+        SlotMachine();
+        array<Reel, 3> reels;
+        void play();
+
+    private:
+        void displayFaces();
 };
+#endif

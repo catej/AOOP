@@ -140,6 +140,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\cate-assignment5-vsc\program.cpp" />
+    <ClCompile Include="..\..\cate-assignment5-vsc\Reel.cpp" />
+    <ClCompile Include="..\..\cate-assignment5-vsc\SlotMachine.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\cate-assignment5-vsc\Reel.h" />

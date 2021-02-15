@@ -1,42 +1,19 @@
+#ifndef Reel_H
+#define Reel_H
+#include <array>
 #include <string>
 
 using namespace std;
 
 class Reel {
     public:
-        Reel() {
-            spin();
-        }
-        string getFace() {
-            return face;
-        }
-        void spin() {
-            face = faces[rand() % 20 +1];
-        }
+        Reel();
+        string getFace();
+        void spin();
 
     private:
-        string faces[20] = {
-            "   LEMON       ",
-            "   CHERRY      ",
-            "   BANANA      ",
-            "   SEVEN       ",
-            "   DIAMOND     ",
-            "   BELL        ",
-            "   HEART       ",
-            "   STAR        ",
-            "   STRAWBERRY  ",
-            "   GRAPE       ",
-            "   BELL        ",
-            "   HORSESHOE   ",
-            "   HEART       ",
-            "   PEAR        ",
-            "   ORANGE      ",
-            "   TEN         ",
-            "   KING        ",
-            "   QUEEN       ",
-            "   JACK        ",
-            "   JOKER       "
-        };
         string face;
+        array<string, 20> faces;
 
 };
+#endif
