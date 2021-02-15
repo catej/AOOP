@@ -5,9 +5,9 @@ SlotMachine::SlotMachine() {
     reels = { Reel(), Reel(), Reel() };
 }
 void SlotMachine::displayFaces() {
-    for (int i = 0; i < 3 ; i++)
+    for (Reel r: reels)
     {
-        cout << "*" << reels[i].getFace() << "";
+        cout << "*" << r.getFace() << "";
     }
     cout << " *\n";           
 }
