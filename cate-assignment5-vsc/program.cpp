@@ -17,13 +17,11 @@ int main() {
     SlotMachine machine = SlotMachine();
 
     int tries = 0;
-    // loop machine.play() untill winner
-    /*while (!machine.getPlayerIsWinner()) {
+    while (!machine.getPlayerIsWinner()) {
         machine.play();
-        cout << "-\n";
         tries++;
-    }*/
-    cout << tries << "to win.\n";
+    }
+    cout << tries << " tries to win.\n";
     
     getchar();
     return 0;
