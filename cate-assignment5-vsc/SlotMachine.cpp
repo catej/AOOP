@@ -13,6 +13,7 @@ void SlotMachine::displayFaces() {
     }
     cout << " *\n";
     cout << "**************************************************\n" << endl;
+    cout << "PIW: " << getPlayerIsWinner() << "\n";
     if (playerIsWinner) {
         cout << "Winner!!!!\n" << endl;
     }
@@ -29,8 +30,10 @@ bool SlotMachine::getPlayerIsWinner() {
 }
 
 void SlotMachine::pullLever() {
-    for (Reel r : reels) {
+    for (Reel &r : reels) {
+        cout << r.getFace() << endl;
         r.spin();
+        cout << r.getFace() << endl;
     }
 }
 
