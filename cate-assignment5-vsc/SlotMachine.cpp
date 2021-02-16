@@ -6,19 +6,22 @@ SlotMachine::SlotMachine() {
     playerIsWinner = false;
 }
 void SlotMachine::displayFaces() {
+    cout << "**************************************************" << endl;
     for (Reel r: reels)
     {
         cout << "*" << r.getFace() << "";
     }
-    cout << " *\n";           
-    cout << playerIsWinner << endl;
+    cout << " *\n";
+    cout << "**************************************************\n" << endl;
+    if (playerIsWinner) {
+        cout << "Winner!!!!\n" << endl;
+    }
 }
 
 void SlotMachine::play() {
     pullLever();
     checkForWinner();
     displayFaces();
-    
 }
 
 bool SlotMachine::getPlayerIsWinner() {

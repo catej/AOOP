@@ -28,7 +28,7 @@ Reel::Reel() {
 }
 
 void Reel::spin() {
-    face = faces[rand() % 20 + 1];
+    face = faces[rand() % 19];
 }
 
 string Reel::getFace() {
