@@ -15,19 +15,19 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\cate-assignment4-vsc\assignment4.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\cate-assignment4-vsc\Coin.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\cate-assignment4-vsc\Game.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
     <ClCompile Include="..\..\cate-assignment4-vsc\program.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\cate-assignment4-vsc\Game.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\cate-assignment4-vsc\Coin.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\cate-assignment4-vsc\assignment4.md" />
   </ItemGroup>
 </Project>

@@ -15,20 +15,20 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\cate-assigment3-vsc\program.cpp">
+    <ClCompile Include="..\..\cate-assignment3-vsc\program.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\cate-assigment3-vsc\Order.h">
+    <ClInclude Include="..\..\cate-assignment3-vsc\Store.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\cate-assigment3-vsc\Store.h">
+    <ClInclude Include="..\..\cate-assignment3-vsc\Order.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="Inventory.txt">
+    <Text Include="..\..\cate-assignment3-vsc\Inventory.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>

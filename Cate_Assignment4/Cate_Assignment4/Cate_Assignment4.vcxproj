@@ -139,14 +139,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\cate-assignment4-vsc\program.cpp" />
+    <None Include="..\..\cate-assignment4-vsc\assignment4.md" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\cate-assignment4-vsc\Coin.h" />
     <ClInclude Include="..\..\cate-assignment4-vsc\Game.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\cate-assignment4-vsc\assignment4.md" />
+    <ClCompile Include="..\..\cate-assignment4-vsc\program.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
