@@ -18,18 +18,18 @@
     <ClCompile Include="..\..\cate-assignment5-vsc\program.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\cate-assignment5-vsc\SlotMachine.cpp">
+    <ClCompile Include="..\..\cate-assignment5-vsc\Reel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\cate-assignment5-vsc\Reel.cpp">
+    <ClCompile Include="..\..\cate-assignment5-vsc\SlotMachine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\cate-assignment5-vsc\Reel.h">
+    <ClInclude Include="..\..\cate-assignment5-vsc\SlotMachine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\cate-assignment5-vsc\SlotMachine.h">
+    <ClInclude Include="..\..\cate-assignment5-vsc\Reel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
