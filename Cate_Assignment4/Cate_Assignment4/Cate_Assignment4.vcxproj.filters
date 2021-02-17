@@ -19,10 +19,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\cate-assignment4-vsc\Coin.h">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\cate-assignment4-vsc\Game.h">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
