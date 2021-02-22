@@ -1,4 +1,6 @@
 #include <iostream>
+#include <ctime>
+#include "Die.h"
 
 using namespace std;
 
