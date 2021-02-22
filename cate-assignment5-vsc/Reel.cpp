@@ -1,5 +1,4 @@
 #include "Reel.h"
-#include <string>
 
 Reel::Reel() {
     faces = {
