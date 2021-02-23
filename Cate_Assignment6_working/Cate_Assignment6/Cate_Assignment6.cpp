@@ -14,6 +14,9 @@ int main() {
 
     srand(time(0));
 
+    Die d = Die();
+    int i = 0;
+
     getchar();
     return 0;
 }
