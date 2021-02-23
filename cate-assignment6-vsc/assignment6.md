@@ -19,13 +19,13 @@ Documented and developed by: Jeff Cate
 * The winner is the player with the highest score after every payer has rolled every die.
 
 ### To Do:
-- [ ] C:Die
-    - [ ] Fields
-        - [ ] dieValue
-    - [ ] Methods
-        - [ ] Die
-        - [ ] getValue
-        - [ ] roll
+- [x] C:Die
+    - [x] Fields
+        - [x] dieValue
+    - [x] Methods
+        - [x] Die
+        - [x] getValue
+        - [x] roll
 
 - [ ] C:Player
     - [ ] Fields
