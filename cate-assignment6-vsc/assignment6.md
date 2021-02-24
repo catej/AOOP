@@ -12,7 +12,7 @@ Documented and developed by: Jeff Cate
 * Number of players: 100
 * How many dice: 20
 
-### ~~ Gameplay ~~
+### ~~ Game play ~~
 * Each player rolls each die one time.
 
 ### ~~ The Winner ~~
@@ -40,4 +40,8 @@ Documented and developed by: Jeff Cate
         - [ ] Player& getWinner(Players[])
         - [ ] void displayWinner(Player&)
         - [ ] Player(+1 overload)
+
+- [ ] Cate_Assignment6.cpp
+    - [ ] Methods
+        - [ ] int main()
         - [ ] void setPlayerNumber(Players[])
