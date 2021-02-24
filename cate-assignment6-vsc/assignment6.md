@@ -43,5 +43,8 @@ Documented and developed by: Jeff Cate
 - [ ] Cate_Assignment6.cpp
     - [ ] Methods
         - [ ] int main()
+            - setPlayerNumber
+            - play
+            - displayWinner
         - [ ] void setPlayerNumber(Players[])
-        - [ ] void displayWinner(Player&)
+        - [x] void displayWinner(Player&)
