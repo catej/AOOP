@@ -38,10 +38,10 @@ Documented and developed by: Jeff Cate
         - [ ] int getSingleDieValue(Die)
         - [ ] int getSumOfDice
         - [ ] Player& getWinner(Players[])
-        - [ ] void displayWinner(Player&)
         - [ ] Player(+1 overload)
 
 - [ ] Cate_Assignment6.cpp
     - [ ] Methods
         - [ ] int main()
         - [ ] void setPlayerNumber(Players[])
+        - [ ] void displayWinner(Player&)

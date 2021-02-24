@@ -13,9 +13,8 @@ class Player
                 int sumOfDice;
 	public:
                 Player();
-                Player(Player&);
+                int getPlayerNumber();
                 int getNumberOfDice();
-                int getPlayerNumber(array<Player,99> Players);
                 int getSingleDieValue(Die d);
                 int getSumOfDice();
                 Player& getWinner();

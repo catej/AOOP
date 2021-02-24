@@ -1,8 +1,11 @@
 #include "Player.h"
 
-Player::Player() {
-    playerNumber = 0;
+void Player::Player() {
+    playerNumber = 1;
     sumOfDice = 0; 
 }
 
+int Player::getPlayerNumber() {
+    return playerNumber;
+}
 

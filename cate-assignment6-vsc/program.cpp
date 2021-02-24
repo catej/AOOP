@@ -1,4 +1,6 @@
 #include <iostream>
+#include <ctime>
+#include "Player.h"
 
 using namespace std;
 
@@ -14,4 +16,9 @@ int main() {
 
     getchar();
     return 0;
+}
+
+void displayWinner(Player winner) {
+    cout << "Winner is Player#: " << winner.getPlayerNumber() << endl
+         << "Total: "<< winner.getSumOfDice() << endl;
 }
