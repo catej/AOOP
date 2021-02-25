@@ -23,10 +23,7 @@ int main() {
 
     Player players[100];
     setPlayerNubmers(players);
-    for (Player p : players)
-    {
-        cout << p.getPlayerNumber() << endl;
-    }
+
     char end = getchar();
     return 0;
 }
