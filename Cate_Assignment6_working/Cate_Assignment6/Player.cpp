@@ -16,3 +16,7 @@ int Player::getPlayerNumber() {
 int Player::getNumberOfDice() {
     return sizeof(dice) / sizeof(dice[0]);
 }
+
+void Player::setPlayerNumber(int n) {
+    playerNumber = n;
+}

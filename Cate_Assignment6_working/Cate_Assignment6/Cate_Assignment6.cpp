@@ -16,11 +16,17 @@ int main() {
     srand(time(0));
 
     Player players[100];
-    cout << players[0].getNumberOfDice();
+    setPlayeraNumber(players);
+    for (Player p : players)
+    {
+        cout << p.getPlayerNumber() << endl;
+    }
     char end = getchar();
     return 0;
 }
 
-void setPlayerNumber(Player team[]) {
-    
+void setPlayeraNumber(Player team[]) {
+    for (int i = 1; i < 101; i++) {
+        team[i - 1].setPlayerNumber(i);
+    }
 }

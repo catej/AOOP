@@ -46,5 +46,5 @@ Documented and developed by: Jeff Cate
             - setPlayerNumber
             - play
             - displayWinner
-        - [ ] void setPlayerNumber(Players[])
+        - [x] void setPlayerNumber(Players[])
         - [x] void displayWinner(Player&)

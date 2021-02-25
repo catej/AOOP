@@ -10,12 +10,12 @@ class Player
 		Die dice[20];
 		int playerNumber;
 		int sumOfDice;
-        void setPlayerNumber();
 	public:
+        void setPlayerNumber(int);
         Player();
         int getNumberOfDice();
         int getPlayerNumber();
-        int getSingleDieValue(Die d);
+        int getSingleDieValue(Die);
         int getSumOfDice();
         Player& getWinner();
         void displayWinner();
