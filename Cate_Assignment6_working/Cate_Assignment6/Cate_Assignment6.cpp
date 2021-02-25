@@ -11,8 +11,8 @@ using namespace std;
 *   ASSIGNMENT # : 6 - Dice Game
 */
 
-void setPlayerNubmers(Player team[]) {
-    for (int i = 1; i < 101; i++) {
+void setPlayerNubmers(Player team[], int size) {
+    for (int i = 1; i <= size; i++) {
         team[i - 1].setPlayerNumber(i);
     }
 }
@@ -22,7 +22,7 @@ int main() {
     srand((unsigned int)time(0));
 
     Player players[100];
-    setPlayerNubmers(players);
+    setPlayerNubmers(players, 100);
 
     char end = getchar();
     return 0;
