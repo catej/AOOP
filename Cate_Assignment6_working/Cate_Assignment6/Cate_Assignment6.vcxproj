@@ -144,6 +144,7 @@
     <ClCompile Include="Player.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Cate_Assignment6.h" />
     <ClInclude Include="Die.h" />
     <ClInclude Include="Player.h" />
   </ItemGroup>

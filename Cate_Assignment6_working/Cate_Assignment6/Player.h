@@ -1,22 +1,20 @@
 #ifndef Player_H
 #define Player_H
 #include "Die.h"
-#include <array>
 
 using namespace std;
 
 class Player
 {
 	private:
-		array<Die, 19> dice;
+		Die dice[20];
 		int playerNumber;
 		int sumOfDice;
         void setPlayerNumber();
 	public:
         Player();
-        Player(Player&);
         int getNumberOfDice();
-        int getPlayerNumber(array<Player,99> Players);
+        int getPlayerNumber();
         int getSingleDieValue(Die d);
         int getSumOfDice();
         Player& getWinner();

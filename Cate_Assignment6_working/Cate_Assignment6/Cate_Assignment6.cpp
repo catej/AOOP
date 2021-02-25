@@ -1,6 +1,7 @@
 #include <iostream>
 #include <ctime>
-#include "Die.h"
+#include "Player.h"
+#include "Cate_Assignment6.h"
 
 using namespace std;
 
@@ -14,9 +15,12 @@ int main() {
 
     srand(time(0));
 
-    Die d = Die();
-    int i = 0;
-
-    getchar();
+    Player players[100];
+    cout << players[0].getNumberOfDice();
+    char end = getchar();
     return 0;
+}
+
+void setPlayerNumber(Player team[]) {
+    
 }
