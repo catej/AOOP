@@ -7,16 +7,15 @@ using namespace std;
 class Player
 {
 	private:
-		Die dice[20];
 		int playerNumber;
 		int sumOfDice;
 	public:
-        void setPlayerNumber(int);
+		Die dice[20];
         Player();
+        void setPlayerNumber(int);
         int getNumberOfDice();
         int getPlayerNumber();
-        int getSingleDieValue(Die);
+        int getSingleDieValue(Die d);
         int getSumOfDice();
-
 };
 #endif
