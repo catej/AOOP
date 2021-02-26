@@ -1,12 +1,8 @@
 #include "Player.h"
 
 Player::Player() {
-    playerNumber = 1;
+    playerNumber = -1;
     sumOfDice = 0;
-    Die dice[20];
-    /*for (int i = 0; i < 20; i++) {
-        dice[i] = Die();
-    }*/
 }
 
 int Player::getPlayerNumber() {
