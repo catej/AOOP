@@ -11,3 +11,4 @@ void Die::roll() {
 int Die::getValue() {
 	return dieValue;
 }
+
