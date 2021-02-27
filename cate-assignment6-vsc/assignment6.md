@@ -28,10 +28,10 @@ Documented and developed by: Jeff Cate
         - [x] roll
 
 - [ ] C:Player
-    - [ ] Fields
-        - [ ] dice
-        - [ ] int playerNumber
-        - [ ] int sumOfDice
+    - [x] Fields
+        - [x] dice
+        - [x] int playerNumber
+        - [x] int sumOfDice
     - [ ] Methods
         - [ ] int getNumberOfDice
         - [ ] int getPlayerNumber
@@ -47,4 +47,4 @@ Documented and developed by: Jeff Cate
             - play
             - displayWinner
         - [x] void setPlayerNumber(Players[])
-        - [x] void displayWinner(Player&)
+        - [ ] void displayWinner(Player&)
