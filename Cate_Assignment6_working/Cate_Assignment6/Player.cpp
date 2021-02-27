@@ -16,3 +16,7 @@ int Player::getNumberOfDice() {
 void Player::setPlayerNumber(int n) {
     playerNumber = n;
 }
+
+int Player::getSingleDieValue(Die d) {
+    return d.getValue();
+}

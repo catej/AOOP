@@ -17,7 +17,7 @@ void displayWinner(Player &winner) {
          << "The winning player is player"<< winner.getPlayerNumber() << endl
          << endl;
     for (Die d : winner.dice) {
-        cout << "die: " << d.getValue() << endl;
+        cout << "die: " << winner.getSingleDieValue(d) << endl;
     }
 
 }
