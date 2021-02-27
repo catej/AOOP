@@ -33,10 +33,10 @@ Documented and developed by: Jeff Cate
         - [x] int playerNumber
         - [x] int sumOfDice
     - [ ] Methods
-        - [ ] int getNumberOfDice
-        - [ ] int getPlayerNumber
-        - [ ] int getSingleDieValue(Die)
-        - [ ] int getSumOfDice
+        - [x] int getNumberOfDice
+        - [x] int getPlayerNumber
+        - [x] int getSingleDieValue(Die)
+        - [x] int getSumOfDice
         - [ ] Player& getWinner(Players[])
         - [ ] Player(+1 overload)
 
