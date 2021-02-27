@@ -27,7 +27,7 @@ Documented and developed by: Jeff Cate
         - [x] getValue
         - [x] roll
 
-- [ ] C:Player
+- [x] C:Player
     - [x] Fields
         - [x] dice
         - [x] int playerNumber
@@ -37,14 +37,14 @@ Documented and developed by: Jeff Cate
         - [x] int getPlayerNumber
         - [x] int getSingleDieValue(Die)
         - [x] int getSumOfDice
-        - [ ] Player& getWinner(Players[])
-        - [ ] Player(+1 overload)
+        <!-- - [ ] Player(+1 overload) -->
+        - [x] play
 
-- [ ] Cate_Assignment6.cpp
-    - [ ] Methods
-        - [ ] int main()
+- [x] Cate_Assignment6.cpp
+    - [x] Methods
+        - [x] int main()
             - setPlayerNumber
-            - play
             - displayWinner
         - [x] void setPlayerNumber(Players[])
-        - [ ] void displayWinner(Player&)
+        - [x] void displayWinner(Player&)
+        - [ ] Player& getWinner(Players[])

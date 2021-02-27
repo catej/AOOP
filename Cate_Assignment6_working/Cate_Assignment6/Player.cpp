@@ -25,9 +25,11 @@ int Player::getSumOfDice() {
     return sumOfDice;
 }
 
-void Player::sumDice() {
+
+void Player::play() {
     sumOfDice = 0;
     for (Die d : dice) {
+        d.roll();
         sumOfDice += d.getValue();
     }
 }
