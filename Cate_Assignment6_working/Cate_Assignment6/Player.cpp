@@ -20,3 +20,14 @@ void Player::setPlayerNumber(int n) {
 int Player::getSingleDieValue(Die d) {
     return d.getValue();
 }
+
+int Player::getSumOfDice() {
+    return sumOfDice;
+}
+
+void Player::sumDice() {
+    sumOfDice = 0;
+    for (Die d : dice) {
+        sumOfDice += d.getValue();
+    }
+}

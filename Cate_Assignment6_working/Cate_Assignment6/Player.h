@@ -16,6 +16,7 @@ class Player
         int getNumberOfDice();
         int getPlayerNumber();
         int getSingleDieValue(Die d);
+        void sumDice();
         int getSumOfDice();
 };
 #endif
