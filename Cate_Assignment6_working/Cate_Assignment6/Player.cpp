@@ -16,3 +16,20 @@ int Player::getNumberOfDice() {
 void Player::setPlayerNumber(int n) {
     playerNumber = n;
 }
+
+int Player::getSingleDieValue(Die d) {
+    return d.getValue();
+}
+
+int Player::getSumOfDice() {
+    return sumOfDice;
+}
+
+
+void Player::play() {
+    sumOfDice = 0;
+    for (Die d : dice) {
+        d.roll();
+        sumOfDice += d.getValue();
+    }
+}

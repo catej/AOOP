@@ -10,6 +10,7 @@ class Player
 		int playerNumber;
 		int sumOfDice;
 	public:
+        void play();
 		Die dice[20];
         Player();
         void setPlayerNumber(int);
