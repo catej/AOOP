@@ -22,6 +22,15 @@ void displayWinner(Player &winner) {
 
 }
 
+Player& getWinner(Player players[], int size) {
+    Player& player = players[0];
+    for (int i = 0; i <= size; i++) {
+        if (players[i].getSumOfDice() > player.getSumOfDice()) {
+            player = players[i];
+        }
+    }
+}
+
 void setPlayerNumbers(Player team[], int size) {
     for (int i = 0; i < size; i++) {
         team[i].setPlayerNumber(i);
@@ -35,7 +44,8 @@ int main() {
 
     Player players[playersSize];
     setPlayerNumbers(players, playersSize);
-    displayWinner(players[1]);
+
+    
 
     char end = getchar();
     return 0;
