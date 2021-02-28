@@ -36,15 +36,16 @@ void displayPlayers(Player players[], int size) {
 }
 
 Player& getWinner(Player players[], int size) {
-    Player &winner = players[0];
+
+    int winningPlayerNumber = 0;
     for (int i = 0; i < size; i++) {
         players[i].play();
-        if (players[i].getSumOfDice() > winner.getSumOfDice()) {
-            winner = players[i];
+        if (players[i].getSumOfDice() > players[winningPlayerNumber].getSumOfDice()) {
+            winningPlayerNumber = i;
         }
     }
-    Player& player = winner;
-    return player;
+    Player& winningPlayer = players[winningPlayerNumber];
+    return winningPlayer;
 }
 
 void setPlayerNumbers(Player team[], int size) {
