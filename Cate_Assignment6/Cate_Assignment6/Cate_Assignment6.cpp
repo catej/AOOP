@@ -72,7 +72,7 @@ int main() {
     Player players[playersSize];
     setPlayerNumbers(players, playersSize);
     Player winner = getWinner(players, playersSize);
-    displayPlayers(players, playersSize);
+    //displayPlayers(players, playersSize);
     displayWinner(winner);
 
     
