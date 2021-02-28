@@ -16,20 +16,30 @@ using namespace std;
 void displayWinner(Player &winner) {
     cout << "The winning player is player"<< winner.getPlayerNumber() << " amount = " << winner.getSumOfDice() << endl
          << endl;
+    int count = 0;
     for (Die d : winner.dice) {
-        cout << "die: " << winner.getSingleDieValue(d) << endl;
+        if (count < 10) {
+            cout << "die"<< count << ":  " << winner.getSingleDieValue(d) << "    ";
+        }
+        else {
+            cout << "die"<< count << ": " << winner.getSingleDieValue(d) << "    ";
+        }
+        if ((count % 5) == 0) {
+            cout << endl;
+        }
+        count++;
     }
-
 }
 void displayPlayers(Player players[], int size) {
     for (int i = 0; i < size; i++) {
-        if (i % 6 == 0) {
-            cout << fixed << setprecision(12) 
-                 << players[i].getPlayerNumber() << ": " << players[i].getSumOfDice() << endl;
+        if (i < 10) {
+            cout << " ";
+        }
+        if (i % 5 == 0) {
+            cout << players[i].getPlayerNumber() << ": " << players[i].getSumOfDice() << endl;
         }
         else {
-            cout << fixed << setprecision(12)
-                 << players[i].getPlayerNumber() << ": " << players[i].getSumOfDice() << "    ";
+            cout << players[i].getPlayerNumber() << ": " << players[i].getSumOfDice() << "\t";
         }
     }
     cout << endl;
