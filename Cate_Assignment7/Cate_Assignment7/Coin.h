@@ -11,8 +11,8 @@ class Coin
 		static double balance;
 		bool heads;
 		double value;
-		const string heads = "HEADS";
-		const string tails = "tails";
+		const string HEADS = "HEADS";
+		const string TAILS = "tails";
 	public:
 		Coin(double v);
 		void addBalance();

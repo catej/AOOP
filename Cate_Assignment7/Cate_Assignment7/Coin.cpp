@@ -7,3 +7,8 @@ Coin::Coin(double v) {
 double Coin::getBalance() {
 	return balance;
 }
+
+bool Coin::getHeads() {
+	return heads;
+}
+
