@@ -1,7 +1,8 @@
 #include <iostream>
 #include <ctime>
 #include "Coin.h"
-
+#include "Dime.h"
+#include "Cate_Assignment7.h"
 using namespace std;
 
 /*
@@ -15,6 +16,9 @@ double Coin::balance = 0;
 int main() {
 
 	srand((unsigned int)time(0));
+
+	Coin dime = Dime();
+
 
 	char end = getchar();
 	return 0;

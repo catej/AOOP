@@ -2,8 +2,8 @@
 
 using namespace std;
 
-Coin::Coin(double v) {
-	value = v;
+Coin::Coin(double value) {
+	this->value = value;
 	toss();
 }
 

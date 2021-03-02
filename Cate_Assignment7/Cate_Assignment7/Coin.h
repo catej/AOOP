@@ -14,7 +14,7 @@ class Coin
 		const string HEADS = "HEADS";
 		const string TAILS = "tails";
 	public:
-		Coin(double v);
+		Coin(double);
 		void addBalance();
 		static double getBalance();
 		void toss();
