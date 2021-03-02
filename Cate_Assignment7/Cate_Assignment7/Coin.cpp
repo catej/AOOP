@@ -4,7 +4,7 @@ using namespace std;
 
 Coin::Coin(double v) {
 	value = v;
-	heads = false;
+	toss();
 }
 
 double Coin::getBalance() {
@@ -20,5 +20,6 @@ string Coin::getSideUp() {
 }
 
 void Coin::toss() {
-	
+	sideUp = ((rand() % 10000) % 2 == 0 ? HEADS : TAILS);
+	heads = sideUp == HEADS ? true : false;
 }
