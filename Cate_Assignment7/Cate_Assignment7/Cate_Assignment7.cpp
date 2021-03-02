@@ -3,6 +3,7 @@
 #include "Coin.h"
 #include "Dime.h"
 #include "Quarter.h"
+#include "Nickel.h"
 #include "Cate_Assignment7.h"
 using namespace std;
 
@@ -18,8 +19,8 @@ int main() {
 
 	srand((unsigned int)time(0));
 
-	Coin dime = Dime();
 	Coin quarter = Quarter();
+	Coin dime = Dime();
 
 
 	char end = getchar();
