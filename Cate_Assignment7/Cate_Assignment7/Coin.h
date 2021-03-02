@@ -20,6 +20,7 @@ class Coin
 		void toss();
 		bool getHeads();
 		string getSideUp();
+		double getValue();
 };
 #endif
 

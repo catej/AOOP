@@ -23,3 +23,7 @@ void Coin::toss() {
 	sideUp = ((rand() % 10000) % 2 == 0 ? HEADS : TAILS);
 	heads = sideUp == HEADS ? true : false;
 }
+
+double Coin::getValue() {
+	return value;
+}
