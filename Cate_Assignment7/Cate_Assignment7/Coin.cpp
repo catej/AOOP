@@ -12,3 +12,6 @@ bool Coin::getHeads() {
 	return heads;
 }
 
+string Coin::getSideUp() {
+	return sideUp;
+}
