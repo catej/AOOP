@@ -6,21 +6,21 @@ using namespace std;
 
 class Coin
 {
-	private:
-		static double balance;
 	protected:
+		static double balance;
 		string sideUp;
 		bool heads;
 		double value;
 		const string HEADS = "HEADS";
 		const string TAILS = "tails";
 	public:
-		Coin(double v);
+		Coin(double);
 		void addBalance();
 		static double getBalance();
 		void toss();
 		bool getHeads();
 		string getSideUp();
+		double getValue();
 };
 #endif
 

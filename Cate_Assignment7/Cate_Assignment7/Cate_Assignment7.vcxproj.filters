@@ -27,6 +27,9 @@
     <ClInclude Include="Nickel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Cate_Assignment7.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Coin.cpp">

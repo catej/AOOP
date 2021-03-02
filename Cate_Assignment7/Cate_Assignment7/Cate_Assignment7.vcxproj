@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Cate_Assignment7.h" />
     <ClInclude Include="Coin.h" />
     <ClInclude Include="Dime.h" />
     <ClInclude Include="Nickel.h" />

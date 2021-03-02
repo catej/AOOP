@@ -2,9 +2,9 @@
 
 using namespace std;
 
-Coin::Coin(double v) {
-	value = v;
-	heads = false;
+Coin::Coin(double value) {
+	this->value = value;
+	toss();
 }
 
 double Coin::getBalance() {
@@ -20,5 +20,10 @@ string Coin::getSideUp() {
 }
 
 void Coin::toss() {
-	
+	sideUp = ((rand() % 10000) % 2 == 0 ? HEADS : TAILS);
+	heads = sideUp == HEADS ? true : false;
+}
+
+double Coin::getValue() {
+	return value;
 }

@@ -1,6 +1,10 @@
 #ifndef Nickel_H
 #define Nickel_H
-class Nickel
+#include "Coin.h"
+class Nickel : public Coin
 {
+	const double value = .05;
+	public:
+		Nickel();
 };
 #endif
