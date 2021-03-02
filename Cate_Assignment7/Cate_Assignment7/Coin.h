@@ -6,9 +6,10 @@ using namespace std;
 
 class Coin
 {
+	private:
+		static double balance;
 	protected:
 		string sideUp;
-		static double balance;
 		bool heads;
 		double value;
 		const string HEADS = "HEADS";
