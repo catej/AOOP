@@ -1,5 +1,6 @@
 #include <iostream>
 #include <ctime>
+#include "Coin.h"
 
 using namespace std;
 
@@ -9,6 +10,7 @@ using namespace std;
 *   ASSIGNMENT # : 7 - Dice Game w/ Inheritance
 */
 
+double Coin::balance = 0;
 
 int main() {
 

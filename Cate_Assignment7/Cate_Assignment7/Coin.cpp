@@ -1,7 +1,10 @@
 #include "Coin.h"
 
+using namespace std;
+
 Coin::Coin(double v) {
 	value = v;
+	heads = false;
 }
 
 double Coin::getBalance() {
@@ -14,4 +17,8 @@ bool Coin::getHeads() {
 
 string Coin::getSideUp() {
 	return sideUp;
+}
+
+void Coin::toss() {
+	
 }
