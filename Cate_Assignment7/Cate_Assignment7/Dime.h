@@ -1,6 +1,7 @@
 #ifndef Dime_H
 #define Dime_H
-class Dime
+#include "Coin.h"
+class Dime : public Coin 
 {
 };
 #endif

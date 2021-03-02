@@ -6,9 +6,8 @@ using namespace std;
 
 class Coin
 {
-	private:
-		static double balance;
 	protected:
+		static double balance;
 		string sideUp;
 		bool heads;
 		double value;
