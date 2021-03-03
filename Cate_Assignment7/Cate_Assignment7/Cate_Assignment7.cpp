@@ -20,8 +20,17 @@ int main() {
 	srand((unsigned int)time(0));
 
 	Coin quarter = Quarter();
-	Coin dime = Dime();
+	Dime dime = Dime();
+	Coin nickel = Nickel();
+	
 
+	quarter.toss();
+	dime.toss();
+	nickel.toss();
+
+	cout << "q: " << quarter.getSideUp() << " : " << quarter.getValue() << endl
+		 << "n: " << nickel.getSideUp()  << " : " << nickel.getValue() << endl
+		 << "d: " << dime.getSideUp()	 << " : " << dime.getValue() << endl;
 
 	char end = getchar();
 	return 0;
