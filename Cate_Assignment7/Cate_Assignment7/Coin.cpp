@@ -1,5 +1,4 @@
 #include "Coin.h"
-
 using namespace std;
 
 Coin::Coin(double value) {

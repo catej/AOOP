@@ -3,7 +3,7 @@
 #include "Coin.h"
 class Nickel : public Coin
 {
-	const double value = .05;
+	double n_value = .05;
 	public:
 		Nickel();
 };

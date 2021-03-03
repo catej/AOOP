@@ -4,7 +4,7 @@
 
 class Dime : public Coin 
 {
-	const double value = .10;
+	double d_value = .1;
 	public :
 		Dime();
 };
