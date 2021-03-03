@@ -1,10 +1,11 @@
-#include <iostream>
-#include <ctime>
-#include "Coin.h"
-#include "Dime.h"
-#include "Quarter.h"
-#include "Nickel.h"
 #include "Cate_Assignment7.h"
+#include <ctime>
+#include <iostream>
+#include "Coin.h"
+#include "Quarter.h"
+#include "Dime.h"
+#include "Nickel.h"
+
 using namespace std;
 
 /*
@@ -19,19 +20,16 @@ int main() {
 
 	srand((unsigned int)time(0));
 
+	bool gameOver = false;
+
 	Coin quarter = Quarter();
-	Dime dime = Dime();
+	Coin dime = Dime();
 	Coin nickel = Nickel();
-	
-
-	quarter.toss();
-	dime.toss();
-	nickel.toss();
-
-	cout << "q: " << quarter.getSideUp() << " : " << quarter.getValue() << endl
-		 << "n: " << nickel.getSideUp()  << " : " << nickel.getValue() << endl
-		 << "d: " << dime.getSideUp()	 << " : " << dime.getValue() << endl;
 
 	char end = getchar();
 	return 0;
 }
+
+//cout << "q: " << quarter.getSideUp() << " : " << quarter.getValue() << endl
+	//	 << "n: " << nickel.getSideUp()  << " : " << nickel.getValue() << endl
+	//	 << "d: " << dime.getSideUp()	 << " : " << dime.getValue() << endl;

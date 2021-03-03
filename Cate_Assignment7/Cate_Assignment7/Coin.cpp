@@ -1,11 +1,9 @@
 #include "Coin.h"
-#include <iostream>
 using namespace std;
 
 Coin::Coin(double value) {
 	this->value = value;
 	toss();
-	cout << "Coin()" << endl;
 }
 
 double Coin::getBalance() {
