@@ -16,6 +16,13 @@ using namespace std;
 
 double Coin::balance = 0;
 
+void evaluateToss(Coin& coin) {
+	coin.toss();
+	if (coin.getHeads()) {
+		coin.addBalance();
+	}
+}
+
 int main() {
 
 	srand((unsigned int)time(0));
