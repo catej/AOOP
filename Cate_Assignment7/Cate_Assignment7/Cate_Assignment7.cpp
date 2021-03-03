@@ -33,10 +33,20 @@ int main() {
 	Coin dime = Dime();
 	Coin nickel = Nickel();
 
+	while (!gameOver) {
+		evaluateToss(quarter);
+		evaluateToss(dime);
+		evaluateToss(nickel);
+
+		if (Coin::getBalance() >= 1) {
+			gameOver = true;
+		}
+	}
+
+	cout << "You "
+		<< (Coin::getBalance() == 1 ? "won!!" : "lost.") << endl
+		<< "balance: " << Coin::getBalance() << endl;
+
 	char end = getchar();
 	return 0;
 }
-
-//cout << "q: " << quarter.getSideUp() << " : " << quarter.getValue() << endl
-	//	 << "n: " << nickel.getSideUp()  << " : " << nickel.getValue() << endl
-	//	 << "d: " << dime.getSideUp()	 << " : " << dime.getValue() << endl;
