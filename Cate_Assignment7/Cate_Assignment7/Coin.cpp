@@ -26,3 +26,7 @@ void Coin::toss() {
 double Coin::getValue() {
 	return value;
 }
+
+void Coin::addBalance() {
+	balance += value;
+}
