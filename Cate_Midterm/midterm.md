@@ -2,10 +2,10 @@
 
 * [ ] Menus
     * [ ] Starting
-        * [ ] Pick up
-        * [ ] Delivery
+        * [x] Pick up
+        * [x] Delivery
     * [ ] Category
-        * [ ] Fresh Produce
+        * [x] Fresh Produce
         * [ ] Meat and Seafood
         * [ ] Frozen Foods
         * [ ] Check Out
@@ -27,10 +27,10 @@
 
 * [ ] Item (base)
     * [ ] Item
-        * [ ] delivery
+        * [x] delivery
         * [ ] name
         * [ ] price
-        * [ ] tip
+        * [x] tip
     * [ ] getDelivery
     * [ ] getName
     * [ ] getPrice
