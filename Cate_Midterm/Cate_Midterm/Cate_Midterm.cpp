@@ -1,6 +1,8 @@
 #include <iostream>
 #include <ctime>
 #include "Item.h"
+#include "FreshProduct.h"
+#include "MeasuredProduct.h"
 #include <vector>
 
 /*
@@ -42,6 +44,31 @@ void displayDeliveryMenu() {
 	}
 }
 
+void getAmount(string quantity, FreshProduct& item) {
+	double num = -1;
+	while (num < 0)
+	{
+		cout << "How many " << quantity << " of " << item.getName() << endl;
+		if (num < 0){
+			system("cls");
+			cout << "Invalid amount";
+		}
+	}
+	item.setPounds(num);
+}
+double getAmount(MeasuredProduct& item) {
+	double num = -1;
+	while (num < 0)
+	{
+		cout << "How many " << item.getName() << endl;
+		if (num < 0) {
+			system("cls");
+			cout << "Invalid amount";
+		}
+	}
+	item.setQuantity(num);
+}
+
 void displayFresh() {
 	system("cls");
 	int choice = -1;
@@ -59,8 +86,29 @@ void displayFresh() {
 
 		system("cls");
 		
+		FreshProduct product = FreshProduct();
+
+		switch (choice) {
+			case 1:
+				product.setName("Gala App");
+				product.setCost(3.99);
+				break;
+			case 2:
+				product.setName("Bananas");
+				product.setCost(.48);
+				break;
+			case 3:
+				product.setName("Grapes");
+				product.setCost(2.99);
+				break;
+		}
+
 		if (choice < 1 || choice > 4) {
 			cout << "Invaid selection! Please try again.\n";
+		}
+		else {
+			getAmount("lbs", product);
+			product.calcPrice();
 		}
 	}
 }

@@ -1,6 +1,9 @@
 #pragma once
 #include "Item.h"
-class FreshProduce : public Item
+
+using namespace std;
+
+class FreshProduct : public Item
 {
 	private:
 		double pounds;
@@ -8,6 +11,6 @@ class FreshProduce : public Item
 		void calcPrice();
 		double getPounds();
 		void setPounds(double);
-		FreshProduce();
+		FreshProduct();
 };						   
 

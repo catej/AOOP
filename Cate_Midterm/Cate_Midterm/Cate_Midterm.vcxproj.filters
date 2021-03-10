@@ -21,10 +21,10 @@
     <ClCompile Include="Item.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FreshProduce.cpp">
+    <ClCompile Include="MeasuredProduct.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MeasuredProduct.cpp">
+    <ClCompile Include="FreshProduct.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -32,10 +32,10 @@
     <ClInclude Include="Item.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FreshProduce.h">
+    <ClInclude Include="MeasuredProduct.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MeasuredProduct.h">
+    <ClInclude Include="FreshProduct.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

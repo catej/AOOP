@@ -15,7 +15,7 @@ class Item
 		double cost;
 
 	public:
-		Item(string);
+		Item();
 		static void setTip(double);
 		static double getTip();
 		static void setDelivery(double);
