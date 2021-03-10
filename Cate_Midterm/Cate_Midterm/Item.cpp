@@ -15,3 +15,11 @@ double Item::getDelivery() {
 void Item::setDelivery(double delivery) {
 	Item::delivery = delivery;
 }
+
+string Item::getName() {
+	return name;
+}
+
+void Item::setName(string name) {
+	this->name = name;
+}
