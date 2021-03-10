@@ -23,3 +23,11 @@ string Item::getName() {
 void Item::setName(string name) {
 	this->name = name;
 }
+
+double Item::getPrice() {
+	return price;
+}
+
+void Item::setPrice(double price) {
+	this->price = price;
+}
