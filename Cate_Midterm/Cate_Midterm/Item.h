@@ -1,16 +1,27 @@
 #pragma once
+#include <string>
 
 using namespace std;
 
 class Item
 {
-	protected:
+	private:
+		static double tip;
+		static double delivery;
+	
+	protected: 
+		string name;
 		double price;
 
 	public:
-		static double delivery;
-		static double tip;
-		
-		
+		static void setDelivery(double);
+		static double getDelivery();
+		static void setTip(double);
+		static double getTip();
+		void setName(string);
+		string getName();
+		void setPrice(double);
+		double getPrice();
+		Item(string);
 };
 

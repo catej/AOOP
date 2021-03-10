@@ -24,7 +24,7 @@ void displayDeliveryMenu() {
 			 << "(1) Pick up\n"
 			 << "(2) Delivery\n"
 			 << "(3) Exit\n"
-			 << "--------------------\n"
+			 << "-------------------\n"
 			 << "Your selection: ";
 		
 		cin >> choice; 
@@ -37,8 +37,8 @@ void displayDeliveryMenu() {
 	}
 
 	if (choice == 2) {
-		Item::delivery = 20;
-		Item::tip = 5;
+		Item::setDelivery(20);
+		Item::setTip(5);
 	}
 }
 
@@ -52,7 +52,7 @@ void displayFresh() {
 			 << "(2) Banana         $0.48/lb\n"
 			 << "(3) Grapes         $2.99/lb\n"
 			 << "(4) Return to Main Menu\n"
-			 << "--------------------\n"
+			 << "---------------------------\n"
 			 << "Your selection: ";
 
 		cin >> choice;
@@ -75,7 +75,30 @@ void displayMeat() {
 			<< "(2) Ground beef    $4.99/lb\n"
 			<< "(3) Salmon         $9.99/lb\n"
 			<< "(4) Return to Main Menu\n"
-			<< "--------------------\n"
+			<< "---------------------------\n"
+			<< "Your selection: ";
+
+		cin >> choice;
+
+		system("cls");
+
+		if (choice < 1 || choice > 4) {
+			cout << "Invaid selection! Please try again.\n";
+		}
+	}
+}
+
+void displayFrozen() {
+	system("cls");
+	int choice = -1;
+
+	while (choice != 4) {
+		cout << "------- Frozen Menu ------\n"
+			<< "(1) Whole Chicken  $6.99/lb\n"
+			<< "(2) Ground beef    $4.99/lb\n"
+			<< "(3) Salmon         $9.99/lb\n"
+			<< "(4) Return to Main Menu\n"
+			<< "---------------------------\n"
 			<< "Your selection: ";
 
 		cin >> choice;
@@ -111,12 +134,10 @@ void displayMainMenu() {
 				displayFresh();
 				break;
 			case 2:
-				cout << "Not Implimented" << endl;
-				//displayMeat();
+				displayMeat();
 				break;
 			case 3:
-				cout << "Not Implimented" << endl;
-				//displayFrozen();
+				displayFrozen();
 				break;
 		}
 
@@ -130,8 +151,8 @@ int main()
 {
 	displayDeliveryMenu();
 	displayMainMenu();
-	cout << "Tip: " << Item::tip << "\n"
-		 << "Delivery: " << Item::delivery << "\n";
+	cout << "     Tip: " << Item::getTip() << "\n"
+		 << "Delivery: " << Item::getDelivery() << "\n";
 	
 	char end = getchar();
 	end = getchar();
