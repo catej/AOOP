@@ -1,5 +1,6 @@
 #pragma once
-class FreshProduce
+#include "Item.h"
+class FreshProduce : public Item
 {
 	private:
 		double pounds;

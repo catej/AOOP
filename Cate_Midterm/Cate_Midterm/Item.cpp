@@ -32,7 +32,7 @@ double Item::getPrice() {
 	return price;
 }
 
-void setCost(double cost) {
+void Item::setCost(double cost) {
 	this->cost = cost;
 }
 

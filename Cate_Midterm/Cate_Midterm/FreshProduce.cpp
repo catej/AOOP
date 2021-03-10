@@ -7,3 +7,7 @@ double FreshProduce::getPounds() {
 void FreshProduce::setPounds(double pounds) {
 	this->pounds = pounds;
 }
+
+void FreshProduce::calcPrice() {
+	setPrice(cost * pounds);
+}
