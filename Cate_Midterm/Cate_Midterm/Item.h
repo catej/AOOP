@@ -11,5 +11,6 @@ class Item
 		static double delivery;
 		static double tip;
 		
+		
 };
 
