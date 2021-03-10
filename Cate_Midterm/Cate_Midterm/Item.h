@@ -12,16 +12,19 @@ class Item
 	protected: 
 		string name;
 		double price;
+		double cost;
 
 	public:
-		static void setDelivery(double);
-		static double getDelivery();
+		Item(string);
 		static void setTip(double);
 		static double getTip();
+		static void setDelivery(double);
+		static double getDelivery();
 		void setName(string);
 		string getName();
 		void setPrice(double);
 		double getPrice();
-		Item(string);
+		void setCost(double);
+		double getCost();
 };
 

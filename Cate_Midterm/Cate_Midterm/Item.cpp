@@ -31,3 +31,12 @@ void Item::setPrice(double price) {
 double Item::getPrice() {
 	return price;
 }
+
+void setCost(double cost) {
+	this->cost = cost;
+}
+
+double Item::getCost() {
+	return cost;
+}
+
