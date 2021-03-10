@@ -39,6 +39,27 @@ void displayDeliveryMenu() {
 	}
 }
 
+void displayFresh() {
+	system("cls");
+	int choice = -1;
+
+	while (choice != 4) {
+		cout << "(1) Gala Apples    $3.99/lb\n"
+			 << "(2) Banana         $0.48/lb\n"
+			 << "(3) Grapes         $2.99/lb\n"
+			 << "(4) Return to Main Menu\n"
+			 << "Your selection: ";
+
+		cin >> choice;
+
+		if (choice < 1 || choice > 4) {
+			cout << "Invaid selection! Please try again.\n";
+		}
+
+		system("cls");
+	}
+}
+
 void displayMainMenu() {
 	system("cls");
 	int choice = -1;
@@ -57,8 +78,7 @@ void displayMainMenu() {
 
 		switch (choice) {
 			case 1:
-				//displayFresh();
-				cout << "Not Implimented" << endl;
+				displayFresh();
 				break;
 			case 2:
 				cout << "Not Implimented" << endl;
@@ -75,7 +95,6 @@ void displayMainMenu() {
 		}
 	}
 }
-
 
 int main()
 {
