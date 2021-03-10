@@ -6,7 +6,7 @@ class FreshProduce
 	public:
 		void calcPrice();
 		double getPounds();
-		double setPounds();
+		void setPounds(double);
 		FreshProduce();
 };						   
 
