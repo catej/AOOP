@@ -59,17 +59,17 @@ void getAmount(string quantity, FreshProduct* item) {
 	}
 	item->setPounds(num);
 }
-void getAmount(MeasuredProduct& item) {
+void getAmount(MeasuredProduct* item) {
 	double num = -1;
 	while (num < 0)
 	{
-		cout << "How many " << item.getName() << endl;
+		cout << "How many " << item->getName() << endl;
 		if (num < 0) {
 			system("cls");
 			cout << "Invalid amount";
 		}
 	}
-	item.setQuantity(num);
+	item->setQuantity(num);
 }
 
 void displayFresh() {
@@ -120,7 +120,7 @@ void displayMeat() {
 	system("cls");
 	int choice = -1;
 
-	while (choice != 4) {
+	do {
 		cout << "-------- Meat Menu -------\n"
 			<< "(1) Whole Chicken  $6.99/lb\n"
 			<< "(2) Ground beef    $4.99/lb\n"
@@ -133,10 +133,31 @@ void displayMeat() {
 
 		system("cls");
 
+		FreshProduct* product = new FreshProduct();
+		switch (choice) {
+		case 1:
+			product->setName("Gala Apples");
+			product->setCost(3.99);
+			break;
+		case 2:
+			product->setName("Bananas");
+			product->setCost(.48);
+			break;
+		case 3:
+			product->setName("Grapes");
+			product->setCost(2.99);
+			break;
+		}
+
 		if (choice < 1 || choice > 4) {
 			cout << "Invaid selection! Please try again.\n";
 		}
-	}
+		else  if (choice != 4) {
+			getAmount("lbs", product);
+			product->calcPrice();
+			cart.push_back(product);
+		}
+	} while (choice != 4);
 }
 
 void displayFrozen() {
