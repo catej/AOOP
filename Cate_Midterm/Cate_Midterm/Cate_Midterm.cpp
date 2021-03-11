@@ -11,9 +11,11 @@
 *   ASSIGNMENT # : Midterm
 */
 
+using namespace std;
+
 double Item::delivery = 0;
 double Item::tip = 0;
-vector<Item*> cart;
+vector<Item *> cart;
 
 void displayDeliveryMenu() {
 
@@ -44,19 +46,20 @@ void displayDeliveryMenu() {
 	}
 }
 
-void getAmount(string quantity, FreshProduct& item) {
+void getAmount(string quantity, FreshProduct* item) {
 	double num = -1;
 	while (num < 0)
 	{
-		cout << "How many " << quantity << " of " << item.getName() << endl;
+		cout << "How many " << quantity << " of " << item->getName() << endl;
+		cin >> num;
 		if (num < 0){
 			system("cls");
 			cout << "Invalid amount";
 		}
 	}
-	item.setPounds(num);
+	item->setPounds(num);
 }
-double getAmount(MeasuredProduct& item) {
+void getAmount(MeasuredProduct& item) {
 	double num = -1;
 	while (num < 0)
 	{
@@ -73,7 +76,7 @@ void displayFresh() {
 	system("cls");
 	int choice = -1;
 
-	while (choice != 4) {
+	do {
 		cout << "-------- Fresh Menu -------\n" 
 			 << "(1) Gala Apples    $3.99/lb\n"
 			 << "(2) Banana         $0.48/lb\n"
@@ -85,32 +88,32 @@ void displayFresh() {
 		cin >> choice;
 
 		system("cls");
-		
-		FreshProduct product = FreshProduct();
 
+		FreshProduct* product = new FreshProduct();
 		switch (choice) {
 			case 1:
-				product.setName("Gala App");
-				product.setCost(3.99);
+				product->setName("Gala Apples");
+				product->setCost(3.99);
 				break;
 			case 2:
-				product.setName("Bananas");
-				product.setCost(.48);
+				product->setName("Bananas");
+				product->setCost(.48);
 				break;
 			case 3:
-				product.setName("Grapes");
-				product.setCost(2.99);
+				product->setName("Grapes");
+				product->setCost(2.99);
 				break;
 		}
 
 		if (choice < 1 || choice > 4) {
 			cout << "Invaid selection! Please try again.\n";
 		}
-		else {
+		else  if (choice !=4) {
 			getAmount("lbs", product);
-			product.calcPrice();
+			product->calcPrice();
+			cart.push_back(product);
 		}
-	}
+	} while (choice != 4);
 }
 
 void displayMeat() {
@@ -163,7 +166,7 @@ void displayMainMenu() {
 	system("cls");
 	int choice = -1;
 
-	while (choice != 4) {
+	do {
 		cout << "----- Main Menu ----\n" 
 			 << "(1) Fresh Produce\n"
 			 << "(2) Meat and Seafood\n"
@@ -192,13 +195,18 @@ void displayMainMenu() {
 		if (choice < 1 || choice > 4) {
 			cout << "Invaid selection! Please try again.\n";
 		}
-	}
+	} while(choice != 4);
 }
 
 int main()
 {
+
 	displayDeliveryMenu();
 	displayMainMenu();
+	for (Item *item : cart) {
+		cout << item->getName() << " " << item->getPrice() << endl;
+	}
+
 	cout << "     Tip: " << Item::getTip() << "\n"
 		 << "Delivery: " << Item::getDelivery() << "\n";
 	

@@ -1,5 +1,10 @@
 #include "Item.h"
 
+Item::Item() {
+	this->price = 0;
+	this->cost = 0;
+}
+
 void Item::setTip(double tip) {
 	Item::tip = tip;
 }

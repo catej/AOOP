@@ -1,5 +1,9 @@
 #include "FreshProduct.h"
 
+FreshProduct::FreshProduct() {
+	this->pounds = 0;
+}
+
 double FreshProduct::getPounds() {
 	return pounds;
 }
