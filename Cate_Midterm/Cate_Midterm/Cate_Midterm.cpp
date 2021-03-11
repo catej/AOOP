@@ -64,6 +64,7 @@ void getAmount(MeasuredProduct* item) {
 	while (num < 0)
 	{
 		cout << "How many " << item->getName() << endl;
+		cin >> num;
 		if (num < 0) {
 			system("cls");
 			cout << "Invalid amount";
@@ -136,16 +137,16 @@ void displayMeat() {
 		FreshProduct* product = new FreshProduct();
 		switch (choice) {
 		case 1:
-			product->setName("Gala Apples");
-			product->setCost(3.99);
+			product->setName("Whole Chicken");
+			product->setCost(6.99);
 			break;
 		case 2:
-			product->setName("Bananas");
-			product->setCost(.48);
+			product->setName("Ground beef");
+			product->setCost(4.99);
 			break;
 		case 3:
-			product->setName("Grapes");
-			product->setCost(2.99);
+			product->setName("Salmon");
+			product->setCost(9.99);
 			break;
 		}
 
@@ -164,11 +165,11 @@ void displayFrozen() {
 	system("cls");
 	int choice = -1;
 
-	while (choice != 4) {
+	do {
 		cout << "------- Frozen Menu ------\n"
-			<< "(1) Whole Chicken  $6.99/lb\n"
-			<< "(2) Ground beef    $4.99/lb\n"
-			<< "(3) Salmon         $9.99/lb\n"
+			<< "(1) Waffles           $6.99/lb\n"
+			<< "(2) Pizza             $4.99/lb\n"
+			<< "(3) Popsicles         $2.99/lb\n"
 			<< "(4) Return to Main Menu\n"
 			<< "---------------------------\n"
 			<< "Your selection: ";
@@ -177,10 +178,31 @@ void displayFrozen() {
 
 		system("cls");
 
+		MeasuredProduct* product = new MeasuredProduct();
+		switch (choice) {
+		case 1:
+			product->setName("Waffles");
+			product->setCost(6.99);
+			break;
+		case 2:
+			product->setName("Pizza");
+			product->setCost(4.99);
+			break;
+		case 3:
+			product->setName("Popsicles");
+			product->setCost(2.99);
+			break;
+		}
+
 		if (choice < 1 || choice > 4) {
 			cout << "Invaid selection! Please try again.\n";
 		}
-	}
+		else  if (choice != 4) {
+			getAmount(product);
+			product->calcPrice();
+			cart.push_back(product);
+		}
+	} while (choice != 4);
 }
 
 void displayMainMenu() {
