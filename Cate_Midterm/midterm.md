@@ -1,9 +1,11 @@
 # Midterm - Online Grocery App
 
+<p>Advanced object oriented programming midterm.</p>
+
 ### To do
-* [ ] Total cart on checkout
-* [ ] Format output
-* [ ] Test Results
+* [x] Total cart on checkout
+* [x] Format output
+* [x] Test Results
 
 * [x] Menus
     * [x] Starting
@@ -45,10 +47,10 @@
     * [x] setName
     * [x] setPrice
     * [x] setTip
-* [ ] FreshProduce
+* [x] FreshProduce
     * [x] Fields
         * [x] pounds
-    * [ ] Methods
+    * [x] Methods
         * [x] calcPrice
         * [x] FreshProduce
         * [x] getPounds
@@ -56,7 +58,7 @@
 * [x] MeasuredProduce
     * [x] Fields
         * [x] quantity
-    * [ ] Methods
+    * [x] Methods
         * [x] calcPrice
         * [x] getQuantity
         * [x] MeasuredProduce
