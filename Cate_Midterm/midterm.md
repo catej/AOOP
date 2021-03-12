@@ -1,58 +1,63 @@
 # Midterm - Online Grocery App
 
-* [ ] Menus
-    * [ ] Starting
+### To do
+* [ ] Total cart on checkout
+* [ ] Format output
+* [ ] Test Results
+
+* [x] Menus
+    * [x] Starting
         * [x] Pick up
         * [x] Delivery
-    * [ ] Category
+    * [x] Category
         * [x] Fresh Produce
-        * [ ] Meat and Seafood
-        * [ ] Frozen Foods
-        * [ ] Check Out
-    * [ ] Fresh Produce
-        * [ ] Gala Apples
-        * [ ] Banana
-        * [ ] Grapes
-        * [ ] Return to Main Menu
-    * [ ] Meat and Seafood
-        * [ ] Whole chicken
-        * [ ] Ground beef
-        * [ ] Salmon
-        * [ ] Return to Main Menu
-    * [ ] Frozen
-        * [ ] Waffles
-        * [ ] Pizza
-        * [ ] Popsicle
-        * [ ] Return to Main Menu
+        * [x] Meat and Seafood
+        * [x] Frozen Foods
+        * [x] Check Out
+    * [x] Fresh Produce
+        * [x] Gala Apples
+        * [x] Banana
+        * [x] Grapes
+        * [x] Return to Main Menu
+    * [x] Meat and Seafood
+        * [x] Whole chicken
+        * [x] Ground beef
+        * [x] Salmon
+        * [x] Return to Main Menu
+    * [x] Frozen
+        * [x] Waffles
+        * [x] Pizza
+        * [x] Popsicle
+        * [x] Return to Main Menu
 
-* [ ] Item (base)
-    * [ ] Item
+* [x] Item (base)
+    * [x] Item
         * [x] delivery
-        * [ ] name
-        * [ ] price
+        * [x] name
+        * [x] price
         * [x] tip
-    * [ ] getDelivery
-    * [ ] getName
-    * [ ] getPrice
-    * [ ] getTip
-    * [ ] Item
-    * [ ] setDelivery
-    * [ ] setName
-    * [ ] setPrice
-    * [ ] setTip
+    * [x] getDelivery
+    * [x] getName
+    * [x] getPrice
+    * [x] getTip
+    * [x] Item
+    * [x] setDelivery
+    * [x] setName
+    * [x] setPrice
+    * [x] setTip
 * [ ] FreshProduce
-    * [ ] Fields
-        * [ ] pounds
+    * [x] Fields
+        * [x] pounds
     * [ ] Methods
-        * [ ] calcPrice
-        * [ ] FreshProduce
-        * [ ] getPounds
-        * [ ] setPounds
-* [ ] MeasuredProduce
-    * [ ] Fields
-        * [ ] quantity
+        * [x] calcPrice
+        * [x] FreshProduce
+        * [x] getPounds
+        * [x] setPounds
+* [x] MeasuredProduce
+    * [x] Fields
+        * [x] quantity
     * [ ] Methods
-        * [ ] calcPrice
-        * [ ] getQuantity
-        * [ ] MeasuredProduce
-        * [ ] setQuantity
+        * [x] calcPrice
+        * [x] getQuantity
+        * [x] MeasuredProduce
+        * [x] setQuantity
