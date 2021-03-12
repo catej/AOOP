@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include <ctime>
 #include "Item.h"
 #include "FreshProduct.h"
@@ -247,20 +248,20 @@ void displayMainMenu() {
 
 int main()
 {
-
 	displayDeliveryMenu();
 	displayMainMenu();
 
 	total += Item::getTip() + Item::getDelivery();
 
 	for (Item *item : cart) {
-		cout << item->getName() << " " << item->getPrice() << endl;
+		cout << fixed << setprecision(2) << setfill(' ') << setw(14) << item->getName() << ":  $" << setfill(' ') << setw(7) << item->getPrice() << endl;
 	}
 
-	cout << "\n     Tip: " << Item::getTip() << "\n"
-		 << "Delivery: " << Item::getDelivery() << "\n"
-		 << "----------------------\n"
-		 << "Total: " << total;
+	cout << fixed << setprecision(2) << "\n"
+		 << setfill(' ') << setw(15) << "Tip:" << "  $" << setfill(' ') <<  setw(7) << Item::getTip() << "\n"
+		 << setfill(' ') << setw(15) << "Delivery:" << "  $" << setfill(' ') << setw(7) << Item::getDelivery() << "\n"
+		 << "--------------------------\n"
+		 << setfill(' ') << setw(18) << "Total:  $" << setfill(' ') << setw(7) << total;
 	
 	char end = getchar();
 	end = getchar();
