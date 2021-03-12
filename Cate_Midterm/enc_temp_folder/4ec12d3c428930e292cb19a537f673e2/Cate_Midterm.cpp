@@ -257,7 +257,7 @@ int main()
 		cout << item->getName() << " " << item->getPrice() << endl;
 	}
 
-	cout << "\n     Tip: " << Item::getTip() << "\n"
+	cout << "     Tip: " << Item::getTip() << "\n"
 		 << "Delivery: " << Item::getDelivery() << "\n"
 		 << "----------------------\n"
 		 << "Total: " << total;
