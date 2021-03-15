@@ -19,3 +19,7 @@ void PersonNode::setLName(string lName) {
 string PersonNode::getLName() {
 	return lName;
 }
+
+string PersonNode::getFullName() {
+	return fName + " " + lName;
+}
