@@ -15,3 +15,7 @@ void PersonNode::setFName(string fName) {
 void PersonNode::setLName(string lName) {
 	this->lName = lName;
 }
+
+string PersonNode::getLName() {
+	return lName;
+}
