@@ -25,7 +25,6 @@ class PersonNode
 		void setPhone(string);
 		string getPhone();
 		PersonNode* setNext();
-		 
 	
 };
 

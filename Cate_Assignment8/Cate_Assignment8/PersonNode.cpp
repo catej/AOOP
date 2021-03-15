@@ -27,3 +27,7 @@ string PersonNode::getFullName() {
 void PersonNode::setPhone(string phone) {
 	this->phone = phone;
 }
+
+string PersonNode::getPhone() {
+	return phone;
+}
