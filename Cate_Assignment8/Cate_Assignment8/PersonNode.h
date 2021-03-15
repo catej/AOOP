@@ -22,7 +22,7 @@ class PersonNode
 		string getFullName();
 		void setNext(PersonNode*);
 		string getNext();
-		void setPhone();
+		void setPhone(string);
 		string getPhone();
 		PersonNode* setNext();
 		 

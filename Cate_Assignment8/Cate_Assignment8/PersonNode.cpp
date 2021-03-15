@@ -23,3 +23,7 @@ string PersonNode::getLName() {
 string PersonNode::getFullName() {
 	return fName + " " + lName;
 }
+
+void PersonNode::setPhone(string phone) {
+	this->phone = phone;
+}
