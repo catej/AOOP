@@ -7,3 +7,7 @@ PersonNode::PersonNode() {
 	PersonNode* next = NULL;
 	phone = "";
 }
+
+void PersonNode::setFName(string fName) {
+	this->fName = fName;
+}
