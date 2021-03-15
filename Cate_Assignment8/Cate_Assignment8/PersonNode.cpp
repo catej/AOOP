@@ -35,3 +35,7 @@ string PersonNode::getPhone() {
 void PersonNode::setAddress(string address) {
 	this->address = address;
 }
+
+string PersonNode::getAddress() {
+	return address;
+}
