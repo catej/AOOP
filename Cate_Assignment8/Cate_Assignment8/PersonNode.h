@@ -18,6 +18,7 @@ class PersonNode
 		string getAddress();
 		void setFName(string);
 		void setLName(string);
+		string getLName();
 		string getFullName();
 		void setNext(PersonNode*);
 		string getNext();
