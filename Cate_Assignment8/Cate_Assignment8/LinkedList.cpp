@@ -9,12 +9,58 @@ LinkedList::LinkedList() {
 }
 
 void LinkedList::addLink(PersonNode *nodeToAdd) {
+	PersonNode *tempNode;
+	PersonNode *previousNode;
+	PersonNode *currentNode = headPtr;
+
 	if (headPtr == NULL) {
 		headPtr = nodeToAdd;
+		return;
+	}
+	else if (nodeToAdd->getLName() < headPtr->getLName()) {
+		tempNode = headPtr;
+		headPtr = nodeToAdd;
+		headPtr->setNext(tempNode);
+	}
+	else if (currentNode->getNext() == NULL) {
+		if (currentNode->getLName() < nodeToAdd->getLName()) {
+			currentNode->setNext(nodeToAdd);
+		}
+		else {
+			tempNode = headPtr;
+			headPtr = nodeToAdd;
+			headPtr->setNext(tempNode);
+		}
 	}
 	else {
-		headPtr->setNext(nodeToAdd);
+		while (currentNode->getNext() != NULL)
+		{
+			previousNode = currentNode;
+			currentNode = currentNode->getNext();
+
+			if (currentNode->getNext() != NULL) {
+
+				if (currentNode->getLName() < nodeToAdd->getLName() && 
+					nodeToAdd->getLName() < currentNode->getNext()->getLName()) {
+
+					nodeToAdd->setNext(currentNode->getNext());
+					previousNode->setNext(currentNode);
+					return;
+				}
+				else if (currentNode->getLName() > nodeToAdd->getLName()) {
+					nodeToAdd->setNext(currentNode);
+					previousNode->setNext(nodeToAdd);
+					return;
+				}
+			}
+			else if (currentNode->getLName() < nodeToAdd->getLName()) {
+				currentNode->setNext(nodeToAdd);
+				return;
+			}
+		}
+		currentNode->setNext(nodeToAdd);
 	}
+	
 }
 
 void LinkedList::createNode() {

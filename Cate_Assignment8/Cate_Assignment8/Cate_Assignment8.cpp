@@ -9,8 +9,8 @@ using namespace std;
 *   ASSIGNMENT # : 8 - Contact List
 */
 
-void mainMenu(LinkedList * list) {
-    int choice = -1;
+void mainMenu(LinkedList *list) {
+    int choice = 0;
     do {
         cout << "    MAIN MENU    \n"
              << "~~~~~~~~~~~~~~~~~\n"
@@ -18,7 +18,7 @@ void mainMenu(LinkedList * list) {
              << "1) Exit\n" 
              << "~~~~~~~~~~~~~~~~~\n"
              << "choice: ";
-        cin >> choice;
+        //cin >> choice;
         switch(choice) {
             case 0:
                 list->createNode();
@@ -35,8 +35,50 @@ void mainMenu(LinkedList * list) {
 
 int main()
 {
-    LinkedList * list = new LinkedList();
-    mainMenu(list);
+    LinkedList *list = new LinkedList();
+    //mainMenu(list);
+
+
+    PersonNode *person = new PersonNode();
+    person->setFName("Alisha");
+    person->setLName("Luymes");
+    person->setAddress("1234");
+    person->setPhone("414");
+
+    list->addLink(person);
+
+    person = new PersonNode();
+    person->setFName("Jeff");
+    person->setLName("Cate");
+    person->setAddress("1234");
+    person->setPhone("414");
+
+    list->addLink(person);
+    
+    person = new PersonNode();
+    person->setFName("Alba");
+    person->setLName("Amen");
+    person->setAddress("1234");
+    person->setPhone("414");
+    
+    list->addLink(person);
+
+    person = new PersonNode();
+    person->setFName("Zill");
+    person->setLName("zimmerman");
+    person->setAddress("1234");
+    person->setPhone("414");
+
+    list->addLink(person);
+
+    person = new PersonNode();
+    person->setFName("Kobe");
+    person->setLName("Briant");
+    person->setAddress("1234");
+    person->setPhone("414");
+
+    list->addLink(person);
+
 
     char end = getchar();
     end = getchar();
