@@ -57,8 +57,11 @@ void LinkedList::addLink(PersonNode *nodeToAdd) {
 				currentNode->setNext(nodeToAdd);
 				return;
 			}
+			else if (currentNode->getLName() > nodeToAdd->getLName()) {
+				nodeToAdd->setNext(currentNode);
+				previousNode->setNext(nodeToAdd);
+			}
 		}
-		currentNode->setNext(nodeToAdd);
 	}
 	
 }
@@ -90,8 +93,8 @@ void LinkedList::createNode() {
 
 void LinkedList::displayPersonNode(PersonNode *node) {
 	cout << "Enter full name   : " << node->getFullName() << endl
-		 << "Enter phone number: " << node->getPhone() << endl
-		 << "Enter address     : " << node->getAddress() << endl << endl;
+		 << "Enter address     : " << node->getAddress() << endl
+		 << "Enter phone number: " << node->getPhone() << endl << endl;
 
 }
 void LinkedList::displayList() {
@@ -106,4 +109,6 @@ void LinkedList::displayList() {
 		displayPersonNode(cur);
 		cur = cur->getNext();
 	}
+	getchar();
+	getchar();
 }

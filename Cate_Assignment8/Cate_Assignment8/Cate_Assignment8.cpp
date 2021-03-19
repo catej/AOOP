@@ -10,20 +10,22 @@ using namespace std;
 */
 
 void mainMenu(LinkedList *list) {
-    int choice = 0;
+    int choice = -1;
     do {
         cout << "    MAIN MENU    \n"
              << "~~~~~~~~~~~~~~~~~\n"
              << "0) Add contact\n"
-             << "1) Exit\n" 
+                "1) Display list\n"
+             << "2) Exit\n" 
              << "~~~~~~~~~~~~~~~~~\n"
              << "choice: ";
-        //cin >> choice;
+        cin >> choice;
         switch(choice) {
             case 0:
                 list->createNode();
                 break;
             case 1:
+                list->displayList();
                 break;
         }
         system("cls");
@@ -42,40 +44,41 @@ int main()
     PersonNode *person = new PersonNode();
     person->setFName("Alisha");
     person->setLName("Luymes");
-    person->setAddress("1234");
-    person->setPhone("414");
-
-    list->addLink(person);
-
-    person = new PersonNode();
-    person->setFName("Jeff");
-    person->setLName("Cate");
-    person->setAddress("1234");
-    person->setPhone("414");
+    person->setAddress("1");
+    person->setPhone("4");
 
     list->addLink(person);
     
     person = new PersonNode();
     person->setFName("Alba");
     person->setLName("Amen");
-    person->setAddress("1234");
-    person->setPhone("414");
+    person->setAddress("2");
+    person->setPhone("1");
     
     list->addLink(person);
 
     person = new PersonNode();
+    person->setFName("Jeff");
+    person->setLName("Cate");
+    person->setAddress("3");
+    person->setPhone("3");
+
+    list->addLink(person);
+    
+
+    person = new PersonNode();
     person->setFName("Zill");
     person->setLName("zimmerman");
-    person->setAddress("1234");
-    person->setPhone("414");
+    person->setAddress("4");
+    person->setPhone("5");
 
     list->addLink(person);
 
     person = new PersonNode();
     person->setFName("Kobe");
     person->setLName("Briant");
-    person->setAddress("1234");
-    person->setPhone("414");
+    person->setAddress("5");
+    person->setPhone("2");
 
     list->addLink(person);
 
