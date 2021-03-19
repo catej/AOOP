@@ -15,7 +15,6 @@ void LinkedList::addLink(PersonNode *nodeToAdd) {
 	else {
 		headPtr->setNext(nodeToAdd);
 	}
-	getchar();
 }
 
 void LinkedList::createNode() {
