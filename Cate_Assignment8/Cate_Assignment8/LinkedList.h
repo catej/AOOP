@@ -9,11 +9,11 @@ class LinkedList
 
 	public:
 		LinkedList();
-		void addLink();
+		void addLink(PersonNode*);
 		void findInsertSpot();
-		void getHeadPtr();
+		PersonNode* getHeadPtr();
 		void displayList();
 		void displayPersonNode();
-
+		void createNode();
 };
 

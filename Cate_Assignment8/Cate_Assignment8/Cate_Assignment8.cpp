@@ -15,8 +15,12 @@ void mainMenu() {
 
 int main()
 {
-    std::cout << "main()" << endl;
+    cout << "main()" << endl;
     mainMenu();
+    LinkedList list = LinkedList();
+
+    list.createNode();
+    list.createNode();
 
     char end = getchar();
     end = getchar();
