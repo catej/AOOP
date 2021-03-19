@@ -4,16 +4,16 @@
 class LinkedList
 {
 	private:
-		PersonNode* headPtr;
-		PersonNode* tailPtr;
+		PersonNode *headPtr;
+		PersonNode *tailPtr;
 
 	public:
 		LinkedList();
-		void addLink();
+		void addLink(PersonNode*);
 		void findInsertSpot();
-		void getHeadPtr();
+		PersonNode* getHeadPtr();
 		void displayList();
 		void displayPersonNode();
-
+		void createNode();
 };
 
