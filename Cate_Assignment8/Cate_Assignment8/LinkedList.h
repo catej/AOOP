@@ -4,8 +4,8 @@
 class LinkedList
 {
 	private:
-		PersonNode* headPtr;
-		PersonNode* tailPtr;
+		PersonNode *headPtr;
+		PersonNode *tailPtr;
 
 	public:
 		LinkedList();

@@ -39,3 +39,11 @@ void PersonNode::setAddress(string address) {
 string PersonNode::getAddress() {
 	return address;
 }
+
+void PersonNode::setNext(PersonNode *next) {
+	this->next = next;
+}
+
+PersonNode* PersonNode::getNext() {
+	return next;
+}

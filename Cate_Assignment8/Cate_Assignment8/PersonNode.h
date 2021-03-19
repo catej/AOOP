@@ -21,10 +21,9 @@ class PersonNode
 		string getLName();
 		string getFullName();
 		void setNext(PersonNode*);
-		string getNext();
 		void setPhone(string);
 		string getPhone();
-		PersonNode* setNext();
+		PersonNode* getNext();
 	
 };
 
