@@ -79,6 +79,7 @@ int main()
 
     list->addLink(person);
 
+    list->displayList();
 
     char end = getchar();
     end = getchar();

@@ -87,3 +87,23 @@ void LinkedList::createNode() {
 
 	addLink(node);
 }
+
+void LinkedList::displayPersonNode(PersonNode *node) {
+	cout << "Enter full name   : " << node->getFullName() << endl
+		 << "Enter phone number: " << node->getPhone() << endl
+		 << "Enter address     : " << node->getAddress() << endl << endl;
+
+}
+void LinkedList::displayList() {
+	system("cls");
+	PersonNode* cur = headPtr;
+
+	cout << "      Contacts     \n"
+		 << "~~~~~~~~~~~~~~~~~~~\n";
+	
+	while (cur != NULL)
+	{
+		displayPersonNode(cur);
+		cur = cur->getNext();
+	}
+}

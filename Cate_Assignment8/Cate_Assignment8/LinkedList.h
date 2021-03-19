@@ -13,7 +13,7 @@ class LinkedList
 		void findInsertSpot();
 		PersonNode* getHeadPtr();
 		void displayList();
-		void displayPersonNode();
+		void displayPersonNode(PersonNode*);
 		void createNode();
 };
 
