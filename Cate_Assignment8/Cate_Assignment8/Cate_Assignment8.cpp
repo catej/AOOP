@@ -79,9 +79,9 @@ int main()
     person->setAddress("4");
     person->setPhone("5");
 
+    1408 ADD THIS PERSON ^ THEN ->
     insertSpot = list->findInsertSpot(person);
     list->addLink(person, insertSpot);
-    1408 ADD THIS PERSON ^
 
     person = new PersonNode();
     person->setFName("Kobe");
@@ -97,5 +97,4 @@ int main()
     list->displayList();
 
     char end = getchar();
-    end = getchar();
 }
