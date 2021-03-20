@@ -109,6 +109,9 @@ void LinkedList::displayList() {
 		displayPersonNode(cur);
 		cur = cur->getNext();
 	}
-	getchar();
-	getchar();
 }
+
+PersonNode* LinkedList::getHeadPtr() {
+	return headPtr;
+}
+
