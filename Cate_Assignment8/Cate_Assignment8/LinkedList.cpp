@@ -17,33 +17,14 @@ PersonNode* LinkedList::findInsertSpot(PersonNode *nodeToAdd) {
 		//headPtr = nodeToAdd;
 		return headPtr;
 	}
-	else if (nodeToAdd->getLName() < headPtr->getLName()) {
-		/*tempNode = headPtr;
-		headPtr = nodeToAdd;
-		headPtr->setNext(tempNode);*/
-		return headPtr;
-	}
 	else if (headPtr->getNext() == NULL) {
 		return headPtr;
 	}
-	else if (currentNode->getNext()){
-		cout << "Something else";
+	else if (nodeToAdd->getLName() < headPtr->getLName()) 
+	{
 		return headPtr;
 	}
 	
-	/*
-	1408  <- add next person then CONTINUE HERE
-	
-	else if (currentNode->getNext() == NULL) {
-		if (currentNode->getLName() < nodeToAdd->getLName()) {
-			currentNode->setNext(nodeToAdd);
-		}
-		else {
-			tempNode = headPtr;
-			headPtr = nodeToAdd;
-			headPtr->setNext(tempNode);
-		}
-	}
 	else {
 		while (currentNode->getNext() != NULL)
 		{
@@ -54,27 +35,20 @@ PersonNode* LinkedList::findInsertSpot(PersonNode *nodeToAdd) {
 
 				if (currentNode->getLName() < nodeToAdd->getLName() && 
 					nodeToAdd->getLName() < currentNode->getNext()->getLName()) {
-
-					nodeToAdd->setNext(currentNode->getNext());
-					previousNode->setNext(currentNode);
-					return;
+					return previousNode;
 				}
 				else if (currentNode->getLName() > nodeToAdd->getLName()) {
-					nodeToAdd->setNext(currentNode);
-					previousNode->setNext(nodeToAdd);
-					return;
+					return previousNode;
 				}
 			}
 			else if (currentNode->getLName() < nodeToAdd->getLName()) {
-				currentNode->setNext(nodeToAdd);
-				return;
+				return currentNode;
 			}
 			else if (currentNode->getLName() > nodeToAdd->getLName()) {
-				nodeToAdd->setNext(currentNode);
-				previousNode->setNext(nodeToAdd);
+				return previousNode;
 			}
 		}
-	}*/
+	}
 	
 }
 void LinkedList::addLink(PersonNode *nodeToAdd, PersonNode *insertSpot) {
@@ -104,6 +78,15 @@ void LinkedList::addLink(PersonNode *nodeToAdd, PersonNode *insertSpot) {
 	{
 		nodeToAdd->setNext(headPtr->getNext());
 		headPtr->setNext(nodeToAdd);
+	}
+	else {
+		if (insertSpot->getNext() != NULL) {
+			nodeToAdd->setNext(insertSpot->getNext());
+			insertSpot->setNext(nodeToAdd);
+		}
+		else {
+			insertSpot->setNext(nodeToAdd);
+		}
 	}
 
 }

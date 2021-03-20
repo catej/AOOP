@@ -49,7 +49,6 @@ int main()
 
     insertSpot = list->findInsertSpot(person);
     list->addLink(person, insertSpot);
-
     person = new PersonNode();
     insertSpot = new PersonNode();
 
@@ -60,8 +59,9 @@ int main()
 
     insertSpot = list->findInsertSpot(person);
     list->addLink(person, insertSpot);
-    
     person = new PersonNode();
+    insertSpot = new PersonNode();
+    
     person->setFName("Jeff");
     person->setLName("Cate");
     person->setAddress("3");
@@ -69,31 +69,27 @@ int main()
 
     insertSpot = list->findInsertSpot(person);
     list->addLink(person, insertSpot);
-
-    {
-    /*
-    1408: ADD NEXT PERSON
     person = new PersonNode();
+    insertSpot = new PersonNode();
+
     person->setFName("Zill");
-    person->setLName("zimmerman");
+    person->setLName("Zimmerman");
     person->setAddress("4");
     person->setPhone("5");
 
-    1408 ADD THIS PERSON ^ THEN ->
     insertSpot = list->findInsertSpot(person);
     list->addLink(person, insertSpot);
-
     person = new PersonNode();
+    insertSpot = new PersonNode();
+
     person->setFName("Kobe");
     person->setLName("Briant");
     person->setAddress("5");
     person->setPhone("2");
 
     insertSpot = list->findInsertSpot(person);
-    list->addLink(person, insertSpot);*/
-
-    }
-
+    list->addLink(person, insertSpot);
+    
     list->displayList();
 
     char end = getchar();
