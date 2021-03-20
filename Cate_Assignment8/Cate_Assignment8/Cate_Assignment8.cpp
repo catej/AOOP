@@ -39,40 +39,49 @@ int main()
 {
     LinkedList *list = new LinkedList();
     //mainMenu(list);
-
-
     PersonNode *person = new PersonNode();
+    PersonNode* insertSpot = new PersonNode();
+
     person->setFName("Alisha");
     person->setLName("Luymes");
     person->setAddress("1");
     person->setPhone("4");
 
-    list->addLink(person);
-    
+    insertSpot = list->findInsertSpot(person);
+    list->addLink(person, insertSpot);
+
     person = new PersonNode();
+    insertSpot = new PersonNode();
+
     person->setFName("Alba");
     person->setLName("Amen");
     person->setAddress("2");
     person->setPhone("1");
-    
-    list->addLink(person);
 
+    insertSpot = list->findInsertSpot(person);
+    list->addLink(person, insertSpot);
+    
     person = new PersonNode();
     person->setFName("Jeff");
     person->setLName("Cate");
     person->setAddress("3");
     person->setPhone("3");
 
-    list->addLink(person);
-    
+    insertSpot = list->findInsertSpot(person);
+    list->addLink(person, insertSpot);
 
+    {
+    /*
+    1408: ADD NEXT PERSON
     person = new PersonNode();
     person->setFName("Zill");
     person->setLName("zimmerman");
     person->setAddress("4");
     person->setPhone("5");
 
-    list->addLink(person);
+    insertSpot = list->findInsertSpot(person);
+    list->addLink(person, insertSpot);
+    1408 ADD THIS PERSON ^
 
     person = new PersonNode();
     person->setFName("Kobe");
@@ -80,7 +89,10 @@ int main()
     person->setAddress("5");
     person->setPhone("2");
 
-    list->addLink(person);
+    insertSpot = list->findInsertSpot(person);
+    list->addLink(person, insertSpot);*/
+
+    }
 
     list->displayList();
 

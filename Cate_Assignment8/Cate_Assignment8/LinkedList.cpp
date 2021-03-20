@@ -8,20 +8,32 @@ LinkedList::LinkedList() {
 	tailPtr = NULL;
 }
 
-void LinkedList::addLink(PersonNode *nodeToAdd) {
+PersonNode* LinkedList::findInsertSpot(PersonNode *nodeToAdd) {
 	PersonNode *tempNode;
 	PersonNode *previousNode;
 	PersonNode *currentNode = headPtr;
 
 	if (headPtr == NULL) {
-		headPtr = nodeToAdd;
-		return;
+		//headPtr = nodeToAdd;
+		return headPtr;
 	}
 	else if (nodeToAdd->getLName() < headPtr->getLName()) {
-		tempNode = headPtr;
+		/*tempNode = headPtr;
 		headPtr = nodeToAdd;
-		headPtr->setNext(tempNode);
+		headPtr->setNext(tempNode);*/
+		return headPtr;
 	}
+	else if (headPtr->getNext() == NULL) {
+		return headPtr;
+	}
+	else if (currentNode->getNext()){
+		cout << "Something else";
+		return headPtr;
+	}
+	
+	/*
+	1408  <- add next person then CONTINUE HERE
+	
 	else if (currentNode->getNext() == NULL) {
 		if (currentNode->getLName() < nodeToAdd->getLName()) {
 			currentNode->setNext(nodeToAdd);
@@ -62,8 +74,38 @@ void LinkedList::addLink(PersonNode *nodeToAdd) {
 				previousNode->setNext(nodeToAdd);
 			}
 		}
-	}
+	}*/
 	
+}
+void LinkedList::addLink(PersonNode *nodeToAdd, PersonNode *insertSpot) {
+	PersonNode* tempNode;
+	PersonNode* previousNode;
+	PersonNode* currentNode = headPtr;
+
+	if (insertSpot == headPtr && 
+		headPtr == NULL)
+	{
+		headPtr = nodeToAdd;
+	}
+	else if (insertSpot == headPtr && 
+			 headPtr != NULL && 
+			 nodeToAdd->getLName() < headPtr->getLName()
+			) 
+	{
+		tempNode = headPtr;
+		headPtr = nodeToAdd;
+		headPtr->setNext(tempNode);
+	}
+	else if (insertSpot == headPtr &&
+			 headPtr != NULL &&
+		     headPtr->getNext() != NULL &&
+			 nodeToAdd->getLName() > headPtr->getLName()
+			) 
+	{
+		nodeToAdd->setNext(headPtr->getNext());
+		headPtr->setNext(nodeToAdd);
+	}
+
 }
 
 void LinkedList::createNode() {
@@ -88,7 +130,8 @@ void LinkedList::createNode() {
 	node->setAddress(address);
 	node->setPhone(phone);
 
-	addLink(node);
+	PersonNode* insertSpot(node);
+	addLink(node, insertSpot);
 }
 
 void LinkedList::displayPersonNode(PersonNode *node) {
@@ -97,6 +140,7 @@ void LinkedList::displayPersonNode(PersonNode *node) {
 		 << "Enter phone number: " << node->getPhone() << endl << endl;
 
 }
+
 void LinkedList::displayList() {
 	system("cls");
 	PersonNode* cur = headPtr;

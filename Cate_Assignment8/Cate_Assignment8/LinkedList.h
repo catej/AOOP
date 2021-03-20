@@ -9,8 +9,8 @@ class LinkedList
 
 	public:
 		LinkedList();
-		void addLink(PersonNode*);
-		void findInsertSpot();
+		void addLink(PersonNode*, PersonNode*);
+		PersonNode* findInsertSpot(PersonNode*);
 		PersonNode* getHeadPtr();
 		void displayList();
 		void displayPersonNode(PersonNode*);
