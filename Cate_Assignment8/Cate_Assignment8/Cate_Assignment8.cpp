@@ -32,7 +32,6 @@ int getNodeToDelete(LinkedList* list) {
 }
 
 PersonNode* createNode() {
-    system("cls");
     cout << "~~~ CREATE NODE ~~~" << endl;
     PersonNode* node = new PersonNode();
 
@@ -116,6 +115,15 @@ void mainMenu(LinkedList *list) {
 int main()
 {
     LinkedList *list = new LinkedList();
+    
+    
+    /*
+    * 
+    * 
+    * Uncomment to pre seed the list
+    * 
+    * 
+    
     PersonNode *person = new PersonNode();
     PersonNode* insertSpot = new PersonNode();
 
@@ -165,7 +173,7 @@ int main()
     person->setPhone("2");
 
     insertSpot = list->findInsertSpot(person);
-    list->addLink(person, insertSpot);
+    list->addLink(person, insertSpot);*/
     
     mainMenu(list);
 
