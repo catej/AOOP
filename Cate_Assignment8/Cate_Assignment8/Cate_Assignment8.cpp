@@ -1,4 +1,5 @@
 #include <iostream>
+#include <istream>
 #include "LinkedList.h"
 
 using namespace std;
@@ -9,36 +10,90 @@ using namespace std;
 *   ASSIGNMENT # : 8 - Contact List
 */
 
+PersonNode* getNodeToDelete(LinkedList* list) {
+    PersonNode *node = new PersonNode();
+    PersonNode* cur = list->getHeadPtr();
+    int i = 0;
+    system("cls");
+    while (cur != NULL)
+    {
+        cout << "Id: " << i << endl;
+
+        list->displayPersonNode(cur);
+        i++;
+        cur = cur->getNext();
+    }
+
+    return node;
+}
+
+PersonNode* createNode() {
+    system("cls");
+    cout << "~~~ CREATE NODE ~~~" << endl;
+    PersonNode* node = new PersonNode();
+
+    string first, last, phone, address, number = "";
+
+    cout << "Enter first name: ";
+    getline(cin, first);
+
+    cout << "Enter last name: ";
+    getline(cin, last);
+
+    cout << "Enter phone number: ";
+    getline(cin, phone);
+    
+    cout << "Enter complete address: ";
+    getline(cin, address);
+   
+    node->setFName(first);
+    node->setLName(last);
+    node->setAddress(address);
+    node->setPhone(phone);
+
+    return node;
+
+}
+
 void mainMenu(LinkedList *list) {
-    int choice = -1;
+
+    string choice = "-1";
     do {
+
+        choice = -1;
+
         cout << "    MAIN MENU    \n"
-             << "~~~~~~~~~~~~~~~~~\n"
-             << "0) Add contact\n"
-                "1) Display list\n"
-             << "2) Exit\n" 
-             << "~~~~~~~~~~~~~~~~~\n"
-             << "choice: ";
-        cin >> choice;
-        switch(choice) {
-            case 0:
-                list->createNode();
-                break;
-            case 1:
-                list->displayList();
-                break;
+              "~~~~~~~~~~~~~~~~~\n"
+              "0) Add contact\n"
+              "1) Display list\n"
+              "2) Delete contact\n"
+              "3) Exit\n" 
+              "~~~~~~~~~~~~~~~~~\n"
+              "choice: ";
+
+        getline(cin, choice);
+
+        if (choice == "0") {
+            PersonNode *node = createNode();
+            PersonNode *insertSpot = list->findInsertSpot(node);
+            list->addLink(node, insertSpot);
         }
-        system("cls");
-        if (choice < 0 || choice > 1) {
-            cout << "Invalid choice! Try again." << endl;
+        else if (choice == "1") {
+            list->displayList();
         }
-    } while (choice >= 0 && choice < 2);
+        else if (choice == "2") {
+            getNodeToDelete(list);
+        }
+        else {
+            cout << "Invalid input! Try again!" << endl;
+        }
+
+    } while (choice != "3");
 }
 
 int main()
 {
     LinkedList *list = new LinkedList();
-    //mainMenu(list);
     PersonNode *person = new PersonNode();
     PersonNode* insertSpot = new PersonNode();
 
@@ -90,7 +145,7 @@ int main()
     insertSpot = list->findInsertSpot(person);
     list->addLink(person, insertSpot);
     
-    list->displayList();
+    mainMenu(list);
 
     char end = getchar();
 }

@@ -91,41 +91,14 @@ void LinkedList::addLink(PersonNode *nodeToAdd, PersonNode *insertSpot) {
 
 }
 
-void LinkedList::createNode() {
-	system("cls");
-	cout << "~~~ CREATE NODE ~~~" << endl;
-	PersonNode* node = new PersonNode();
-	string first, last, phone, address;
-	cout << "Enter first name: ";
-	cin >> first;
-	
-	cout << "Enter last name: ";
-	cin >> last;
-
-	cout << "Enter phone number: ";
-	cin >> phone;
-
-	cout << "Enter address: ";
-	cin >> address;
-	
-	node->setFName(first);
-	node->setLName(last);
-	node->setAddress(address);
-	node->setPhone(phone);
-
-	PersonNode* insertSpot(node);
-	addLink(node, insertSpot);
-}
 
 void LinkedList::displayPersonNode(PersonNode *node) {
 	cout << "Enter full name   : " << node->getFullName() << endl
 		 << "Enter address     : " << node->getAddress() << endl
 		 << "Enter phone number: " << node->getPhone() << endl << endl;
-
 }
 
 void LinkedList::displayList() {
-	system("cls");
 	PersonNode* cur = headPtr;
 
 	cout << "      Contacts     \n"
