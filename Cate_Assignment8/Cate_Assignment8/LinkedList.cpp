@@ -115,3 +115,6 @@ PersonNode* LinkedList::getHeadPtr() {
 	return headPtr;
 }
 
+void LinkedList::setHead(PersonNode* node) {
+	headPtr = node;
+}

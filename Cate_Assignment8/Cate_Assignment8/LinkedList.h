@@ -14,6 +14,6 @@ class LinkedList
 		PersonNode* getHeadPtr();
 		void displayList();
 		void displayPersonNode(PersonNode*);
-		void createNode();
+		void setHead(PersonNode*);
 };
 

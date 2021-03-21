@@ -10,8 +10,8 @@ using namespace std;
 *   ASSIGNMENT # : 8 - Contact List
 */
 
-PersonNode* getNodeToDelete(LinkedList* list) {
-    PersonNode *node = new PersonNode();
+int getNodeToDelete(LinkedList* list) {
+    PersonNode *nodeToReturn = new PersonNode();
     PersonNode* cur = list->getHeadPtr();
     int i = 0;
     system("cls");
@@ -23,8 +23,12 @@ PersonNode* getNodeToDelete(LinkedList* list) {
         i++;
         cur = cur->getNext();
     }
-
-    return node;
+    i = 0;
+    string choice;
+    cout << "Select id to delete: ";
+    getline(cin, choice);
+    int nodeToFind = stoi(choice);
+    return nodeToFind;
 }
 
 PersonNode* createNode() {
@@ -82,9 +86,27 @@ void mainMenu(LinkedList *list) {
             list->displayList();
         }
         else if (choice == "2") {
-            getNodeToDelete(list);
+            int nodeToDelete = getNodeToDelete(list);
+            if (nodeToDelete == 0) {
+                list->setHead(list->getHeadPtr()->getNext());
+            }
+            else if (nodeToDelete == 1) {
+                list->getHeadPtr()->setNext(list->getHeadPtr()->getNext()->getNext());
+            }
+            else {
+                int i = 2;
+                PersonNode* prev = list->getHeadPtr()->getNext();
+                PersonNode* cur = list->getHeadPtr()->getNext()->getNext();
+                while (nodeToDelete != i)
+                {
+                    prev = cur;
+                    cur = cur->getNext();
+                    i++;
+                }
+                prev->setNext(cur->getNext());
+            }
         }
-        else {
+        else if (choice != "3") {
             cout << "Invalid input! Try again!" << endl;
         }
 
