@@ -1,4 +1,8 @@
 #include <iostream>
+#include "Shape.h"
+#include "Rectangle.h"
+#include "Circle.h"
+#include "Triangle.h"
 
 using namespace std;
 
@@ -9,9 +13,21 @@ using namespace std;
 */
 
 
+void mainMenu() {
+    int choice = -1;
+    Shape *shape;
+
+    cout << "Welcome to the Area Calculator" << endl;
+    switch (choice)
+    {
+        case 1:
+            shape = new Rectangle();
+            break;
+    }
+}
+
 int main()
 {
-    cout << "Welcome to the Area Calculator" << endl;
-
+    mainMenu();
     char end = getchar();
 }

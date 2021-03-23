@@ -1,5 +1,5 @@
 #pragma once
-class Circle
+class Circle : public Shape
 {
 };
 
