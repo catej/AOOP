@@ -19,39 +19,50 @@ void mainMenu() {
     int choice = -1;
     Shape *shape;
 
-    cout << "Welcome to the Area Calculator" << endl
-         << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl << endl
-         
-         << "What kind of shape?" << endl
-         << "0) Rectangle" << endl
-         << "1) Circle" << endl
-         << "2) Triangle" << endl
-         << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl
-         << "Choice: ";
-
-    string answer;
-    getline(cin, answer);
-    choice = stoi(answer);
-
-    switch (choice)
+    while (choice != 0)
     {
-        case 1:
-            cout << "Rectangle" << endl;
-            shape = new Rectangle();
-            break;
-        case 2:
-            // shape = new Circle();
-            break;
-        case 3:
-            // shape = new Triangle();
-            break;
+        system("cls");
+        cout << "Welcome to the Area Calculator" << endl
+             << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl << endl
+         
+             << "What kind of shape?" << endl
+             << "1) Rectangle" << endl
+             << "2) Circle" << endl
+             << "3) Triangle" << endl << endl
+
+             << "0) Exit" << endl
+             << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl
+             << "Choice: ";
+
+        string answer;
+        getline(cin, answer);
+        choice = stoi(answer);
+
+        switch (choice)
+        {
+            case 1:
+                cout << "Rectangle" << endl;
+                shape = new Rectangle();
+                break;
+            case 2:
+                cout << "Circle" << endl;
+                // shape = new Circle();
+                break;
+            case 3:
+                cout << "Triangle" << endl;
+                // shape = new Triangle();
+                break;
+        }
+        getchar();
     }
+    system("cls");
 }
 
 int main()
 {
     mainMenu();
 
+    cout << "Press <enter> to exit program...";
 
     string end;
     getline(cin, end);
