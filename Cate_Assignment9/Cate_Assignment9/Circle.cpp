@@ -21,4 +21,11 @@ void Circle::setRadius(double radius) {
 
 double Circle::getRadius() {
 	return radius;
-} 
+}
+
+void Circle::setHeight(double height) {
+	this->height = height;
+}
+double Circle::getHeight() {
+	return height;
+}
