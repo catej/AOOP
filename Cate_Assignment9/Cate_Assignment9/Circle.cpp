@@ -14,3 +14,11 @@ void Circle::calculateArea(double radius, double height) {
 	double baseArea = 2 * M_PI * pow(radius, 2);
 	area = lateralArea + baseArea;
 }
+
+void Circle::setRadius(double radius) {
+	this->radius = radius;
+}
+
+double Circle::getRadius() {
+	return radius;
+} 
