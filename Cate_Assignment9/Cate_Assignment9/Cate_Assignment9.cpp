@@ -11,7 +11,7 @@ using namespace std;
 /*
 *        STUDENT : Jeff Cate
 *       COURSE # : ITDEV185-900
-*   ASSIGNMENT # : 9 - The Presentation (Abstract Class, Virtual fulction, Polymorphism)
+*   ASSIGNMENT # : 9 - The Presentation (Abstract Class, Virtual function, Polymorphism)
 */
 
 void rectangleFactory() {
@@ -75,7 +75,7 @@ void circleFactory() {
         getline(cin, answer);
         circle.setRadius(stod(answer));
         cout << endl;
-        circle.calculateArea(circle.getArea());
+        circle.calculateArea(circle.getRadius());
     }
     else { 
         cout << "What radius of the circle? ";
@@ -96,7 +96,7 @@ void circleFactory() {
         cout << "            Height : " << circle.getHeight() << endl;
     }
     cout << "              Area : " << circle.getArea() << endl
-        << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+         << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
 }
 
 void mainMenu() {
