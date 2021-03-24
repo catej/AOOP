@@ -99,6 +99,54 @@ void circleFactory() {
          << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
 }
 
+void triangleFactory() {
+    system("cls");
+    cout << "          Triangle           " << endl
+        << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+    //Triangle triangle = Triangle();
+    //string answer;
+    //const string tri = "triangle";
+    //const string pri = "prism";
+
+    //cout << "Triangle(1) or Prism(2)? ";
+
+    //getline(cin, answer);
+    //triangle.setShape((stoi(answer) == 1) ?  tri : pri);
+
+    //if (triangle.getShape() == tri) {
+    //    cout << "What is the base of the triangle? ";
+    //    getline(cin, answer);
+    //    triangle.setBase(stod(answer));
+    //    
+    //    cout << "What is the height of the triangle? ";
+    //    getline(cin, answer);
+    //    triangle.setHeight(stod(answer));
+    //    //1408 
+    //    cout << endl;
+    //    triangle.calculateArea(triangle.getBase(), triangle.getHeight());
+    //}
+    //else {
+    //    cout << "What radius of the circle? ";
+    //    getline(cin, answer);
+    //    circle.setRadius(stod(answer));
+    //    cout << "What height of the Cylinder? ";
+    //    getline(cin, answer);
+    //    circle.setHeight(stod(answer));
+    //    circle.calculateArea(circle.getRadius(), circle.getHeight());
+    //    cout << endl;
+    //}
+
+    //cout << "           Results            " << endl
+    //    << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl
+    //    << "Circle or Clyinder : " << circle.getShape() << endl
+    //    << "            Radius : " << circle.getRadius() << endl;
+    //if (circle.getShape() == "clyinder") {
+    //    cout << "            Height : " << circle.getHeight() << endl;
+    //}
+    //cout << "              Area : " << circle.getArea() << endl
+    //    << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+}
+
 void mainMenu() {
     int choice = -1;
 
