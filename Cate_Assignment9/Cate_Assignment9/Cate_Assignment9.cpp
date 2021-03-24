@@ -57,7 +57,9 @@ void rectangleFactory() {
 }
 
 void circleFactory() {
-
+    Circle circle = Circle();
+    circle.calculateArea(5,5);
+    cout << circle.getArea();
 }
 
 void mainMenu() {
@@ -90,7 +92,7 @@ void mainMenu() {
                 break;
             case 2:
                 cout << "Circle" << endl;
-                //circleFactory();
+                circleFactory();
                 break;
             case 3:
                 cout << "Triangle" << endl;
