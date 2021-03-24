@@ -14,10 +14,21 @@ using namespace std;
 *   ASSIGNMENT # : 9 - The Presentation (Abstract Class, Virtual fulction, Polymorphism)
 */
 
+void rectangleFactory() {
+    cout << "Rectangle Factory";
+    Rectangle rectangle = Rectangle();
+    bool equal;
+    string answer;
+
+    cout << "Are all sides equal(y,n)? ";
+    getline(cin, answer);
+    equal = answer == "y" ? true : false;
+
+
+}
 
 void mainMenu() {
     int choice = -1;
-    Shape *shape;
 
     while (choice != 0)
     {
@@ -42,21 +53,23 @@ void mainMenu() {
         {
             case 1:
                 cout << "Rectangle" << endl;
-                shape = new Rectangle();
+                rectangleFactory();
                 break;
             case 2:
                 cout << "Circle" << endl;
-                // shape = new Circle();
+                //circleFactory();
                 break;
             case 3:
                 cout << "Triangle" << endl;
-                // shape = new Triangle();
+                //triangleFactory();
                 break;
         }
         getchar();
+
     }
     system("cls");
 }
+
 
 int main()
 {
