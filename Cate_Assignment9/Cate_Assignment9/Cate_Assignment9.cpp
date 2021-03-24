@@ -15,6 +15,7 @@ using namespace std;
 */
 
 void rectangleFactory() {
+    system("cls");
     cout << "           Rectangle          " << endl
          << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
     Rectangle rectangle = Rectangle();
@@ -29,22 +30,29 @@ void rectangleFactory() {
     if (equal) {
         cout << "What length are the sides? ";
         getline(cin , answer);
-        rectangle.setLength((stod(answer));
+        rectangle.setLength(stod(answer));
+        rectangle.setWidth(stod(answer));
         rectangle.calculateArea(rectangle.getLength());
+        cout << endl;
     }
     else {
-
+        cout << "What length of the rectangle? ";
+        getline(cin, answer);
+        rectangle.setLength(stod(answer));
+        cout << "What width of the rectangle? ";
+        getline(cin, answer);
+        rectangle.setWidth(stod(answer));
+        rectangle.calculateArea(rectangle.getLength());
+        cout << endl;
     }
 
     cout << "           Results            " << endl
          << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl
-         << "Side are equal : "<< (rectangle.getAreEqual() ? true : false) << endl
+         << "Side are equal : " << (rectangle.getAreEqual() ? "True" : "False") << endl
          << "        Length : " << rectangle.getLength() << endl
          << "         Width : " << rectangle.getWidth() << endl
-         << "          Area : " << rectangle.getArea() << endl;
-
-
-    getchar();
+         << "          Area : " << rectangle.getArea() << endl
+         << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
 
 }
 
@@ -85,7 +93,7 @@ void mainMenu() {
                 //triangleFactory();
                 break;
         }
-        cout << "press enter to cycle again...";
+        cout << "press <enter> to cycle again...";
         getchar();
 
     }
