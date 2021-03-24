@@ -23,6 +23,8 @@ void rectangleFactory() {
     cout << "Are all sides equal(y,n)? ";
     getline(cin, answer);
     equal = answer == "y" ? true : false;
+
+
 }
 
 void mainMenu() {
