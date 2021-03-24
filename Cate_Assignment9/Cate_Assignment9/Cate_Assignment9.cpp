@@ -57,9 +57,43 @@ void rectangleFactory() {
 }
 
 void circleFactory() {
+
+    system("cls");
+    cout << "            Circle           " << endl
+        << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
     Circle circle = Circle();
-    circle.calculateArea(5,5);
-    cout << circle.getArea();
+    bool isCircle;
+    string answer;
+
+    cout << "Circle(c) or Cylinder(cir, cyl)? ";
+    getline(cin, answer);
+    isCircle = answer == "cir" ? true : false;
+    
+    if (isCircle) {
+        cout << "What is the radius? ";
+        getline(cin, answer);
+        circle.setRadius(stod(answer));
+        cout << endl;
+        circle.calculateArea(circle.getArea());
+    }
+    else { 
+        cout << "What radius of the circle? ";
+        getline(cin, answer);
+        circle.setRadius(stod(answer));
+        cout << "What height of the Cylinder? ";
+        getline(cin, answer);
+        circle.setHeight(stod(answer));
+        circle.calculateArea(circle.getRadius(), circle.getHeight());
+        cout << endl;
+    }
+
+    cout << "           Results            " << endl
+        << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl
+        << "Circle or Clyinder : " << circle.getShape() << endl
+        << "            Radius : " << circle.getRadius() << endl
+        << "            Height : " << circle.getHeight() << endl
+        << "              Area : " << circle.getArea() << endl
+        << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
 }
 
 void mainMenu() {

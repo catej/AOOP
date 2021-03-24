@@ -40,10 +40,3 @@ void Rectangle::setAreEqual(bool areEqual) {
 bool Rectangle::getAreEqual() {
 	return areEqual;
 }
-
-bool Rectangle::getAreEqual() {
-	return areEqual;
-}
-void Rectangle::setAreEqual(bool e) {
-	areEqual = e;
-}
