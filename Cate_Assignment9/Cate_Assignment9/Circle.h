@@ -19,7 +19,7 @@ class Circle : public Shape
 		void calculateArea(double, double);
 		void setRadius(double);
 		double getRadius();
-		void setHeigth();
+		void setHeight(double);
 		double getHeight();
 		void setShape(string);
 		string getShape();

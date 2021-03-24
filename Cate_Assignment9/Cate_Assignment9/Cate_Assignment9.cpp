@@ -42,16 +42,18 @@ void rectangleFactory() {
         cout << "What width of the rectangle? ";
         getline(cin, answer);
         rectangle.setWidth(stod(answer));
-        rectangle.calculateArea(rectangle.getLength());
+        rectangle.calculateArea(rectangle.getLength(), rectangle.getWidth());
         cout << endl;
     }
 
     cout << "           Results            " << endl
          << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl
          << "Side are equal : " << (rectangle.getAreEqual() ? "True" : "False") << endl
-         << "        Length : " << rectangle.getLength() << endl
-         << "         Width : " << rectangle.getWidth() << endl
-         << "          Area : " << rectangle.getArea() << endl
+         << "        Length : " << rectangle.getLength() << endl;
+    if (equal == false) {
+        cout << "         Width : " << rectangle.getWidth() << endl;
+    }
+    cout << "          Area : " << rectangle.getArea() << endl
          << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
 
 }
@@ -87,11 +89,13 @@ void circleFactory() {
     }
 
     cout << "           Results            " << endl
-        << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl
-        << "Circle or Clyinder : " << circle.getShape() << endl
-        << "            Radius : " << circle.getRadius() << endl
-        << "            Height : " << circle.getHeight() << endl
-        << "              Area : " << circle.getArea() << endl
+         << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl
+         << "Circle or Clyinder : " << circle.getShape() << endl
+         << "            Radius : " << circle.getRadius() << endl;
+    if (circle.getShape() == "clyinder") {
+        cout << "            Height : " << circle.getHeight() << endl;
+    }
+    cout << "              Area : " << circle.getArea() << endl
         << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
 }
 
