@@ -24,3 +24,11 @@ void Rectangle::setLength(double length) {
 double Rectangle::getLength() {
 	return length;
 }
+
+void Rectangle::setWidth(double width) {
+	this->width = width;
+}
+
+double Rectangle::getWidth() {
+	return width;
+}
