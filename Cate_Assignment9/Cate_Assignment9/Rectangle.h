@@ -3,8 +3,9 @@
 
 class Rectangle : public Shape
 {
+	public:
+		Rectangle();
 	protected:
-		void setDimensions();
 		void calculateArea(double);
 		void calculateArea(double, double);
 };

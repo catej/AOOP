@@ -16,6 +16,13 @@ using namespace std;
 
 void rectangleFactory() {
     cout << "Rectangle Factory";
+    Rectangle rectangle = Rectangle();
+    bool equal;
+    string answer;
+
+    cout << "Are all sides equal(y,n)? ";
+    getline(cin, answer);
+    equal = answer == "y" ? true : false;
 }
 
 void mainMenu() {
@@ -55,6 +62,7 @@ void mainMenu() {
                 //triangleFactory();
                 break;
         }
+        getchar();
 
     }
     system("cls");
