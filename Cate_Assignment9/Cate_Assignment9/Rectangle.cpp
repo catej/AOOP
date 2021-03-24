@@ -16,3 +16,11 @@ void Rectangle::calculateArea(double l, double w) {
 	cout << "Rectangle two parameters";
 	area = l * w;
 }
+
+void Rectangle::setLength(double length) {
+	this->length = length;
+}
+
+double Rectangle::getLength() {
+	return length;
+}
