@@ -62,14 +62,13 @@ void circleFactory() {
     cout << "            Circle           " << endl
         << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
     Circle circle = Circle();
-    bool isCircle;
     string answer;
+    cout << "Circle(1) or Cylinder(2)? ";
 
-    cout << "Circle(c) or Cylinder(cir, cyl)? ";
     getline(cin, answer);
-    isCircle = answer == "cir" ? true : false;
+    circle.setShape((stoi(answer) == 1) ? "circle" : "clyinder");
     
-    if (isCircle) {
+    if (circle.getShape() == "circle") {
         cout << "What is the radius? ";
         getline(cin, answer);
         circle.setRadius(stod(answer));
