@@ -29,3 +29,11 @@ void Circle::setHeight(double height) {
 double Circle::getHeight() {
 	return height;
 }
+
+void Circle::setShape(string shape) {
+	this->shape = shape;
+}
+
+string Circle::getShape() {
+	return shape;
+}
