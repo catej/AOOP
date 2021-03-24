@@ -56,6 +56,10 @@ void rectangleFactory() {
 
 }
 
+void circleFactory() {
+
+}
+
 void mainMenu() {
     int choice = -1;
 

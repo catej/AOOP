@@ -6,6 +6,7 @@ using namespace std;
 Rectangle::Rectangle() {
 	length = 0;
 	width = 0;
+	areEqual = false;
 }
 
 void Rectangle::calculateArea(double length) {
