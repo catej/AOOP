@@ -15,7 +15,8 @@ using namespace std;
 */
 
 void rectangleFactory() {
-    cout << "Rectangle Factory";
+    cout << "           Rectangle          " << endl
+         << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
     Rectangle rectangle = Rectangle();
     bool equal;
     string answer;
@@ -23,7 +24,27 @@ void rectangleFactory() {
     cout << "Are all sides equal(y,n)? ";
     getline(cin, answer);
     equal = answer == "y" ? true : false;
+    rectangle.setAreEqual(equal);
 
+    if (equal) {
+        cout << "What length are the sides? ";
+        getline(cin , answer);
+        rectangle.setLength((stod(answer));
+        rectangle.calculateArea(rectangle.getLength());
+    }
+    else {
+
+    }
+
+    cout << "           Results            " << endl
+         << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl
+         << "Side are equal : "<< (rectangle.getAreEqual() ? true : false) << endl
+         << "        Length : " << rectangle.getLength() << endl
+         << "         Width : " << rectangle.getWidth() << endl
+         << "          Area : " << rectangle.getArea() << endl;
+
+
+    getchar();
 
 }
 
@@ -64,6 +85,7 @@ void mainMenu() {
                 //triangleFactory();
                 break;
         }
+        cout << "press enter to cycle again...";
         getchar();
 
     }
