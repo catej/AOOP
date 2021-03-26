@@ -1,9 +1,8 @@
-<iostream>
+#include <iostream>
 #include <string>
 #include "Shape.h"
 #include "Rectangle.h"
 #include "Circle.h"
-#include "Triangle.h"
 
 using namespace std;
 
@@ -99,54 +98,6 @@ void circleFactory() {
          << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
 }
 
-void triangleFactory() {
-    system("cls");
-    cout << "          Triangle           " << endl
-        << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
-    Triangle triangle = Triangle();
-    string answer;
-    const string tri = "triangle";
-    const string pri = "prism";
-
-    cout << "Triangle(1) or Prism(2)? ";
-
-    getline(cin, answer);
-    triangle.setShape((stoi(answer) == 1) ?  tri : pri);
-
-    if (triangle.getShape() == tri) {
-        cout << "What is the base of the triangle? ";
-        getline(cin, answer);
-        triangle.setBase(stod(answer));
-        
-        cout << "What is the height of the triangle? ";
-        getline(cin, answer);
-        triangle.setHeight(stod(answer));
-        cout << endl;
-        triangle.calculateArea(triangle.getBase(), triangle.getHeight());
-    }
-    else {
-        cout << "What length of the sideA? ";
-        getline(cin, answer);
-        triangle.setBase(stod(answer));
-        cout << "What lenght of sideB? ";
-        getline(cin, answer);
-        triangle.setHeight(stod(answer));
-        triangle.calculateArea(triangle.getBase(), triangle.getHeight(), triangle.getLength());
-        cout << endl;
-    }
-
-    cout << "           Results            " << endl
-        << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl
-        << "Circle or Clyinder : " << triangle.getShape() << endl
-        << "              Base : " << triangle.getBase() << endl
-        << "            Height : " << triangle.getHeight() << endl;
-    if (triangle.getShape() == pri) {
-        cout << "            Length : " << triangle.getLength() << endl;
-    }
-    cout << "              Area : " << triangle.getArea() << endl
-        << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
-}
-
 void mainMenu() {
     int choice = -1;
 
@@ -159,7 +110,6 @@ void mainMenu() {
              << "What kind of shape?" << endl
              << "1) Rectangle" << endl
              << "2) Circle" << endl
-             << "3) Triangle" << endl << endl
 
              << "0) Exit" << endl
              << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl
@@ -178,10 +128,6 @@ void mainMenu() {
             case 2:
                 cout << "Circle" << endl;
                 circleFactory();
-                break;
-            case 3:
-                cout << "Triangle" << endl;
-                //triangleFactory();
                 break;
         }
         cout << "press <enter> to cycle again...";
