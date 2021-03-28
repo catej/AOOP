@@ -12,3 +12,19 @@ void Contact::setLastName(string lastName) {
 void Contact::setPhone(string phone) {
 
 }
+
+char* Contact::getFullName() {
+
+}
+
+char* Contact::getFirstName(){
+
+}
+
+char* Contact::getLastName() {
+
+}
+
+char* Contact::getPhone()	 {
+
+}
