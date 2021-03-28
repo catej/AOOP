@@ -6,11 +6,11 @@ Circle::Circle() {
 }
 
 void Circle::calculateArea(double radius) {
-	area = M_PI * pow(radius, 2);
+	area = M_PI * pow(radius, 2); // Circle
 }
 
 void Circle::calculateArea(double radius, double height) {
-	double lateralArea = (2 * M_PI * radius) * height;
+	double lateralArea = (2 * M_PI * radius) * height; // Cylinder
 	double baseArea = 2 * M_PI * pow(radius, 2);
 	area = lateralArea + baseArea;
 }
