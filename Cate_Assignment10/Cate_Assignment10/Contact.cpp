@@ -1,19 +1,10 @@
 #include "Contact.h"
 
+Contact::Contact() {
+
+}
+
 void Contact::setFirstName(string firstName) {
-
-}
-void Contact::setFullName(string fullName) {
-
-}
-void Contact::setLastName(string lastName) {
-
-}
-void Contact::setPhone(string phone) {
-
-}
-
-char* Contact::getFullName() {
 
 }
 
@@ -21,10 +12,26 @@ char* Contact::getFirstName(){
 
 }
 
+void Contact::setFullName(string fullName) {
+
+}
+
+char* Contact::getFullName() {
+
+}
+
+void Contact::setLastName(string lastName) {
+
+}
+
 char* Contact::getLastName() {
 
 }
 
-char* Contact::getPhone()	 {
+void Contact::setPhone(string phone) {
+
+}
+
+char* Contact::getPhone() {
 
 }
