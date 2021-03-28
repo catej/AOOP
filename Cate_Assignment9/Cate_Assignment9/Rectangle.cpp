@@ -10,7 +10,7 @@ Rectangle::Rectangle() {
 }
 
 void Rectangle::calculateArea(double length) {
-	area = length * length;
+	area = length * length; // area = length x width = length x length = width x width
 }
 
 void Rectangle::calculateArea(double l, double w) {
