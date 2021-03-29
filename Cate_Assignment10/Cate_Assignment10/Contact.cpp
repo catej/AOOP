@@ -1,5 +1,5 @@
 #include "Contact.h"
-//#pragma warning(disable : 4996)
+#pragma warning(disable : 4996)
 
 Contact::Contact() {
 }
@@ -13,6 +13,7 @@ char* Contact::getFirstName(){
 }
 
 void Contact::setFullName(string fullName) {
+	strcpy_s(this->fullName, fullName.c_str());
 }
 
 char* Contact::getFullName() {
