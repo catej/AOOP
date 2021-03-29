@@ -43,16 +43,24 @@ void displayEntry(Contact contact) {
 }
 
 void searchContacts(Contact contacts[], char contactToFind[20]) {
+    bool found = false;
     for (int i = 0; i < 10; i++) {
         if (strcmp(contacts[i].getFirstName(), contactToFind) == 0 ||
             strcmp(contacts[i].getLastName(), contactToFind) == 0||
             strcmp(contacts[i].getFullName(), contactToFind) == 0
         )
         {
+            found = true;
             displayEntry(contacts[i]);
         }
     }
+    if (!found) {
+        cout << "No matching contact found!!" << endl << endl;
+    }
+
+    cout << "Press <enter> to continue...";
     getchar();
+    system("cls");
 }
 
 int main()
@@ -61,9 +69,9 @@ int main()
     readFromFile(contacts);
 
     string name = "search";
-    cout << "~~~~~~~~~~~~~~~~~~ Main ~~~~~~~~~~~~~~~~~~ " << endl << endl;
     do
     {
+        cout << "~~~~~~~~~~~~~~~~~~ Main ~~~~~~~~~~~~~~~~~~ " << endl << endl;
         cout << "Enter a name to search(\"e\" to exit): ";
         getline(cin, name);
 
@@ -74,7 +82,4 @@ int main()
             searchContacts(contacts, searchTerm);
         }
     } while (name != "e");
-
-    cout << "press enter to exit...";
-    char end = getchar();
 }
