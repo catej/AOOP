@@ -1,11 +1,11 @@
 #include "Contact.h"
+#pragma warning(disable : 4996)
 
 Contact::Contact() {
-
 }
 
 void Contact::setFirstName(string firstName) {
-	strcpy(this->firstName, firstName.c_str());
+	strcpy_s(this->firstName, firstName.c_str());
 }
 
 char* Contact::getFirstName(){
@@ -13,7 +13,6 @@ char* Contact::getFirstName(){
 }
 
 void Contact::setFullName(string fullName) {
-	strcpy(this->fullName, fullName.c_str());
 }
 
 char* Contact::getFullName() {
@@ -21,13 +20,12 @@ char* Contact::getFullName() {
 }
 
 void Contact::setLastName(string lastName) {
-	strcpy(this->lastName, lastName.c_str());
+	strcpy_s(this->lastName, lastName.c_str());
 }
 
 char* Contact::getLastName() {
 	return lastName;
 }
-
 void Contact::setPhone(string phone) {
 	strcpy(this->phone, phone.c_str());
 }

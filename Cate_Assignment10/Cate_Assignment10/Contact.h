@@ -9,9 +9,9 @@ class Contact
 {
 	private:
 		char firstName[20];
-		char fullName [40];
-		char lastName [20];
-		char phone [14];
+		char fullName[40];
+		char lastName[20];
+		char phone[14];
 
 	public:
 		Contact();
