@@ -9,7 +9,7 @@ using namespace std;
 *   ASSIGNMENT # : 10 - Contact list w/ char[]
 */
 
-void readFromFile(Contact[]) {
+void readFromFile(*Contact[]) {
     //read from file
 }
 
@@ -18,18 +18,22 @@ void searchContacts(Contact Contacts[], char Contact[]) {
 }
 
 void displayEntry(Contact contact) {
-    // display
+    cout << " name : " << contact.getLastName() << ", " << contact.getFirstName() << endl;
+    cout << "phone : " << contact.getPhone() << endl << endl;
 }
 
 int main()
 {
-    cout << "~~~ Main ~~~ " << endl;
+    cout << "~~~ Main ~~~ " << endl << endl;
+    Contact  contacts[10];
 
     Contact me = Contact();
     me.setFirstName("Jeff");
     me.setLastName("Cate");
     me.setPhone("414-444-4444");
 
-    display
+    displayEntry(me);
+
+    cout << "press enter to exit...";
     char end = getchar();
 }
