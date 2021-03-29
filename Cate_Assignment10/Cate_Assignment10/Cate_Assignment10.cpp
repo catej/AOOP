@@ -38,38 +38,42 @@ void readFromFile(Contact Contact[]) {
 
 
 void displayEntry(Contact contact) {
-    cout << " name : " << contact.getFullName() << endl;
-    cout << "phone : " << contact.getPhone() << endl << endl;
+    cout << " Full Name : " << contact.getFullName() << endl;
+    cout << "     Phone : " << contact.getPhone() << endl << endl;
 }
 
 void searchContacts(Contact contacts[], char contactToFind[20]) {
     for (int i = 0; i < 10; i++) {
-        if (
-            strcmp(contacts[i].getFirstName(), contactToFind) == 0 ||
+        if (strcmp(contacts[i].getFirstName(), contactToFind) == 0 ||
             strcmp(contacts[i].getLastName(), contactToFind) == 0||
             strcmp(contacts[i].getFullName(), contactToFind) == 0
-            )
+        )
         {
             displayEntry(contacts[i]);
         }
     }
+    getchar();
 }
 
 int main()
 {
-    cout << "~~~ Main ~~~ " << endl << endl;
     Contact  contacts[10];
     readFromFile(contacts);
 
-    Contact me = Contact();
-    me.setFirstName("Jeff");
-    me.setLastName("Cate");
-    me.setFullName(string(me.getLastName()) + ", " +  string(me.getFirstName()));
-    me.setPhone("414-444-4444");        
+    string name = "search";
+    cout << "~~~~~~~~~~~~~~~~~~ Main ~~~~~~~~~~~~~~~~~~ " << endl << endl;
+    do
+    {
+        cout << "Enter a name to search(\"e\" to exit): ";
+        getline(cin, name);
 
-    char name[20] = "Smith";
-
-    searchContacts(contacts, name);
+        if (name != "e") {
+            char searchTerm[20];
+            strcpy_s(searchTerm, name.c_str());
+            cout << endl;
+            searchContacts(contacts, searchTerm);
+        }
+    } while (name != "e");
 
     cout << "press enter to exit...";
     char end = getchar();
