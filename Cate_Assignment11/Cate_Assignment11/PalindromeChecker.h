@@ -8,5 +8,7 @@ static class PalindromeChecker
 {
 	public:
 		static bool isPalindrome(string, int, int);
+		static void menu();
+		static string getString();
 };
 

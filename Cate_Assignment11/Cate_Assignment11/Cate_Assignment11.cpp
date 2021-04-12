@@ -11,7 +11,9 @@ using namespace std;
 
 int main()
 {
-    bool result = PalindromeChecker::isPalindrome("dad", 0, 2);
+    PalindromeChecker::menu();
+
+    /*bool result = PalindromeChecker::isPalindrome("dad", 0, 2);
     cout << ((result == 1) ? "true" : "false")  << endl;
     result = PalindromeChecker::isPalindrome("mom", 0, 2);
     cout << ((result == 1) ? "true" : "false") << endl;
@@ -20,7 +22,7 @@ int main()
     result = PalindromeChecker::isPalindrome("Madam", 0, 4);
     cout << ((result == 1) ? "true" : "false") << endl;
     result = PalindromeChecker::isPalindrome("1234321", 0, 6);
-    cout << ((result == 1) ? "true" : "false") << endl;
+    cout << ((result == 1) ? "true" : "false") << endl;*/
     
     char end = getchar();
 }
