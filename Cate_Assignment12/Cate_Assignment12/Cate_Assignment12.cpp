@@ -123,12 +123,11 @@ void mainMenu(LinkedList* list) {
     } while (choice != "3");
 }
 
-int main()
-{
+void seedList(LinkedList* list) {
+
     try
     {
-        LinkedList* list = new LinkedList();
-        PersonNode *person = new PersonNode();
+        PersonNode* person = new PersonNode();
         PersonNode* insertSpot = new PersonNode();
 
         person->setFName("Alisha");
@@ -151,16 +150,6 @@ int main()
         person = new PersonNode();
         insertSpot = new PersonNode();
 
-        person->setFName("Jeff");
-        person->setLName("Cate");
-        person->setAddress("3");
-        person->setPhone("3");
-
-        insertSpot = list->findInsertSpot(person);
-        list->addLink(person, insertSpot);
-        person = new PersonNode();
-        insertSpot = new PersonNode();
-
         person->setFName("Zill");
         person->setLName("Zimmerman");
         person->setAddress("4");
@@ -170,18 +159,44 @@ int main()
         list->addLink(person, insertSpot);
         person = new PersonNode();
         insertSpot = new PersonNode();
-    
+
+        person->setFName("Jeff");
+        person->setLName("Cate");
+        person->setAddress("3");
+        person->setPhone("arositn");
+        
+        insertSpot = list->findInsertSpot(person);
+        list->addLink(person, insertSpot);
+        person = new PersonNode();
+        insertSpot = new PersonNode();
+
         person->setFName("Kobe");
         person->setLName("Briant");
         person->setAddress("5");
         person->setPhone("2");
         insertSpot = list->findInsertSpot(person);
         list->addLink(person, insertSpot);
-        
-        mainMenu(list);
-        throw std::exception("Unknown error occured."); // create excemption to handle unknown errors 
     }
-    catch (...) // catch unknown error
+    catch (std::invalid_argument iAExc)
+    {
+        cout << iAExc.what() << endl;
+    }
+}
+
+int main()
+{
+    try
+    {
+        LinkedList* list = new LinkedList();
+        seedList(list);
+        mainMenu(list);
+
+        // Throw unknown error
+        throw std::exception("Unknown error occured."); 
+
+    }
+    // Unknown error caught
+    catch (...) 
     {
         std::exception_ptr p = std::current_exception();
         cout << "Unknown error thrown" << endl ;

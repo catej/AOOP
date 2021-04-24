@@ -49,8 +49,8 @@ PersonNode* LinkedList::findInsertSpot(PersonNode* nodeToAdd) {
 			}
 		}
 	}
-
 }
+
 void LinkedList::addLink(PersonNode* nodeToAdd, PersonNode* insertSpot) {
 	PersonNode* tempNode;
 	PersonNode* previousNode;
@@ -91,18 +91,17 @@ void LinkedList::addLink(PersonNode* nodeToAdd, PersonNode* insertSpot) {
 
 }
 
-
 void LinkedList::displayPersonNode(PersonNode* node) {
 	cout << "Enter full name   : " << node->getFullName() << endl
-		<< "Enter address     : " << node->getAddress() << endl
-		<< "Enter phone number: " << node->getPhone() << endl << endl;
+		 << "Enter address     : " << node->getAddress() << endl
+		 << "Enter phone number: " << node->getPhone() << endl << endl;
 }
 
 void LinkedList::displayList() {
 	PersonNode* cur = headPtr;
 
 	cout << "      Contacts     \n"
-		<< "~~~~~~~~~~~~~~~~~~~\n";
+		 << "~~~~~~~~~~~~~~~~~~~\n";
 
 	while (cur != NULL)
 	{

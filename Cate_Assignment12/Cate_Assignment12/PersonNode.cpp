@@ -5,7 +5,7 @@ PersonNode::PersonNode() {
 	fName = "";
 	lName = "";
 	PersonNode* next = NULL;
-	phone = "";
+	phone = 0;
 }
 
 void PersonNode::setFName(string fName) {
@@ -25,10 +25,10 @@ string PersonNode::getFullName() {
 }
 
 void PersonNode::setPhone(string phone) {
-	this->phone = phone;
+	this->phone = stoi(phone);
 }
 
-string PersonNode::getPhone() {
+int PersonNode::getPhone() {
 	return phone;
 }
 

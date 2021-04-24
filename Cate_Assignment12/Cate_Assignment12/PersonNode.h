@@ -10,7 +10,7 @@ private:
 	string fName;
 	string lName;
 	PersonNode* next;
-	string phone;
+	int phone;
 
 public:
 	PersonNode();
@@ -22,7 +22,7 @@ public:
 	string getFullName();
 	void setNext(PersonNode*);
 	void setPhone(string);
-	string getPhone();
+	int getPhone();
 	PersonNode* getNext();
 };
 
