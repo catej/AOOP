@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include "Contact.h"
+#include <exception>
 
 using namespace std;
 
@@ -74,12 +75,19 @@ int main()
         cout << "~~~~~~~~~~~~~~~~~~ Main ~~~~~~~~~~~~~~~~~~ " << endl << endl;
         cout << "Enter a name to search(\"e\" to exit): ";
         getline(cin, name);
-
-        if (name != "e") {
-            char searchTerm[20];
-            strcpy_s(searchTerm, name.c_str());
-            cout << endl;
-            searchContacts(contacts, searchTerm);
-        }
+            if (name != "e") {
+                char searchTerm[20];
+                try
+                {
+                    strcpy_s(searchTerm, name.c_str());
+                    cout << endl;
+                    searchContacts(contacts, searchTerm);
+                }
+                catch (... )
+                {
+                    std::cerr << "exception caught: " << "Unknown error caught" << endl;
+                    name = "";
+                }
+            }
     } while (name != "e");
 }
