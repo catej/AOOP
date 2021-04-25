@@ -112,12 +112,12 @@ void mainMenu(LinkedList* list) {
                     prev->setNext(cur->getNext());
                 }
             }
-            else {
+            else if (choice != "3") {
                 throw customInvalidIntgerExcemption();
             }
         }
         catch (customInvalidIntgerExcemption e) {
-            cout << e.what() << endl;
+            cout << e.what() << endl << endl;
         }
 
     } while (choice != "3");
@@ -198,7 +198,6 @@ int main()
     // Unknown error caught
     catch (...) 
     {
-        std::exception_ptr p = std::current_exception();
         cout << "Unknown error thrown" << endl ;
     }
 
