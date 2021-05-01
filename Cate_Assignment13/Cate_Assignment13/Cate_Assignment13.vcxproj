@@ -139,13 +139,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="App.cpp" />
     <ClCompile Include="Cate_Assignment13.cpp" />
     <ClCompile Include="Statistic.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="App.h" />
     <ClInclude Include="Statistic.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SearchesForCupcakes.csv" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="names.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
