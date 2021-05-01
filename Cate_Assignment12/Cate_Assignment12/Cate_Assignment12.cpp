@@ -10,6 +10,14 @@ using namespace std;
 *   ASSIGNMENT # : 8 - Contact List
 */
 
+struct customInvalidIntgerExcemption : public std::exception
+{
+    const char* what() const throw ()
+    {
+        return "Error: Invalid integer.";
+    }
+};
+
 int getNodeToDelete(LinkedList* list) {
     PersonNode* nodeToReturn = new PersonNode();
     PersonNode* cur = list->getHeadPtr();
@@ -62,113 +70,136 @@ void mainMenu(LinkedList* list) {
 
     string choice = "-1";
     do {
+        try {
+                        
+            cout << "    MAIN MENU    \n"
+                    "~~~~~~~~~~~~~~~~~\n"
+                    "0) Add contact\n"
+                    "1) Display list\n"
+                    "2) Delete contact\n"
+                    "3) Exit\n"
+                    "~~~~~~~~~~~~~~~~~\n"
+                    "choice: ";
 
-        choice = -1;
+            getline(cin, choice);
 
-        cout << "    MAIN MENU    \n"
-            "~~~~~~~~~~~~~~~~~\n"
-            "0) Add contact\n"
-            "1) Display list\n"
-            "2) Delete contact\n"
-            "3) Exit\n"
-            "~~~~~~~~~~~~~~~~~\n"
-            "choice: ";
-
-        getline(cin, choice);
-
-        if (choice == "0") {
-            PersonNode* node = createNode();
-            PersonNode* insertSpot = list->findInsertSpot(node);
-            list->addLink(node, insertSpot);
-        }
-        else if (choice == "1") {
-            list->displayList();
-        }
-        else if (choice == "2") {
-            int nodeToDelete = getNodeToDelete(list);
-            if (nodeToDelete == 0) {
-                list->setHead(list->getHeadPtr()->getNext());
+            if (choice == "0") {
+                PersonNode* node = createNode();
+                PersonNode* insertSpot = list->findInsertSpot(node);
+                list->addLink(node, insertSpot);
             }
-            else if (nodeToDelete == 1) {
-                list->getHeadPtr()->setNext(list->getHeadPtr()->getNext()->getNext());
+            else if (choice == "1") {
+                list->displayList();
             }
-            else {
-                int i = 2;
-                PersonNode* prev = list->getHeadPtr()->getNext();
-                PersonNode* cur = list->getHeadPtr()->getNext()->getNext();
-                while (nodeToDelete != i)
-                {
-                    prev = cur;
-                    cur = cur->getNext();
-                    i++;
+            else if (choice == "2") {
+                int nodeToDelete = getNodeToDelete(list);
+                if (nodeToDelete == 0) {
+                    list->setHead(list->getHeadPtr()->getNext());
                 }
-                prev->setNext(cur->getNext());
+                else if (nodeToDelete == 1) {
+                    list->getHeadPtr()->setNext(list->getHeadPtr()->getNext()->getNext());
+                }
+                else {
+                    int i = 2;
+                    PersonNode* prev = list->getHeadPtr()->getNext();
+                    PersonNode* cur = list->getHeadPtr()->getNext()->getNext();
+                    while (nodeToDelete != i)
+                    {
+                        prev = cur;
+                        cur = cur->getNext();
+                        i++;
+                    }
+                    prev->setNext(cur->getNext());
+                }
+            }
+            else if (choice != "3") {
+                throw customInvalidIntgerExcemption();
             }
         }
-        else if (choice != "3") {
-            cout << "Invalid input! Try again!" << endl;
+        catch (customInvalidIntgerExcemption e) {
+            cout << e.what() << endl << endl;
         }
 
     } while (choice != "3");
 }
 
+void seedList(LinkedList* list) {
+
+    try
+    {
+        PersonNode* person = new PersonNode();
+        PersonNode* insertSpot = new PersonNode();
+
+        person->setFName("Alisha");
+        person->setLName("Luymes");
+        person->setAddress("1");
+        person->setPhone("4");
+
+        insertSpot = list->findInsertSpot(person);
+        list->addLink(person, insertSpot);
+        person = new PersonNode();
+        insertSpot = new PersonNode();
+
+        person->setFName("Alba");
+        person->setLName("Amen");
+        person->setAddress("2");
+        person->setPhone("1");
+
+        insertSpot = list->findInsertSpot(person);
+        list->addLink(person, insertSpot);
+        person = new PersonNode();
+        insertSpot = new PersonNode();
+
+        person->setFName("Zill");
+        person->setLName("Zimmerman");
+        person->setAddress("4");
+        person->setPhone("5");
+
+        insertSpot = list->findInsertSpot(person);
+        list->addLink(person, insertSpot);
+        person = new PersonNode();
+        insertSpot = new PersonNode();
+
+        person->setFName("Jeff");
+        person->setLName("Cate");
+        person->setAddress("3");
+        person->setPhone("arositn");
+        
+        insertSpot = list->findInsertSpot(person);
+        list->addLink(person, insertSpot);
+        person = new PersonNode();
+        insertSpot = new PersonNode();
+
+        person->setFName("Kobe");
+        person->setLName("Briant");
+        person->setAddress("5");
+        person->setPhone("2");
+        insertSpot = list->findInsertSpot(person);
+        list->addLink(person, insertSpot);
+    }
+    catch (std::invalid_argument iAExc)
+    {
+        cout << iAExc.what() << endl;
+    }
+}
+
 int main()
 {
-    LinkedList* list = new LinkedList();
+    try
+    {
+        LinkedList* list = new LinkedList();
+        seedList(list);
+        mainMenu(list);
 
-    
-    PersonNode *person = new PersonNode();
-    PersonNode* insertSpot = new PersonNode();
+        // Throw unknown error
+        throw std::exception("Unknown error occured."); 
 
-    person->setFName("Alisha");
-    person->setLName("Luymes");
-    person->setAddress("1");
-    person->setPhone("4");
-
-    insertSpot = list->findInsertSpot(person);
-    list->addLink(person, insertSpot);
-    person = new PersonNode();
-    insertSpot = new PersonNode();
-
-    person->setFName("Alba");
-    person->setLName("Amen");
-    person->setAddress("2");
-    person->setPhone("1");
-
-    insertSpot = list->findInsertSpot(person);
-    list->addLink(person, insertSpot);
-    person = new PersonNode();
-    insertSpot = new PersonNode();
-
-    person->setFName("Jeff");
-    person->setLName("Cate");
-    person->setAddress("3");
-    person->setPhone("3");
-
-    insertSpot = list->findInsertSpot(person);
-    list->addLink(person, insertSpot);
-    person = new PersonNode();
-    insertSpot = new PersonNode();
-
-    person->setFName("Zill");
-    person->setLName("Zimmerman");
-    person->setAddress("4");
-    person->setPhone("5");
-
-    insertSpot = list->findInsertSpot(person);
-    list->addLink(person, insertSpot);
-    person = new PersonNode();
-    insertSpot = new PersonNode();
-
-    person->setFName("Kobe");
-    person->setLName("Briant");
-    person->setAddress("5");
-    person->setPhone("2");
-
-    insertSpot = list->findInsertSpot(person);
-    list->addLink(person, insertSpot);
-
-    mainMenu(list);
+    }
+    // Unknown error caught
+    catch (...) 
+    {
+        cout << "Unknown error thrown" << endl ;
+    }
 
     char end = getchar();
 }
