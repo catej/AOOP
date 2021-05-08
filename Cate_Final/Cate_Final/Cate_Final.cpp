@@ -5,6 +5,7 @@
 #include "FreshProduct.h"
 #include "MeasuredProduct.h"
 #include <vector>
+#include <exception>
 
 /*
 *        STUDENT : Jeff Cate
@@ -19,13 +20,22 @@ double Item::tip = 0;
 vector<Item*> cart;
 double total = 0;
 
+
+class myLimitException : public exception {
+public:
+	const char* what() const noexcept override {
+		return "error detected\nIncorrect integer input. Please try again.\n";
+	}
+};
+
 void displayDeliveryMenu() {
 
 	system("cls");
 
-	int choice = -1;
-
-	while (choice < 1 || choice > 3) {
+	int choice;
+	string answer;
+	bool valid = false;
+	while (!valid) {
 		cout << "-- Delivery Menu --\n"
 			<< "(1) Pick up\n"
 			<< "(2) Delivery\n"
@@ -33,12 +43,23 @@ void displayDeliveryMenu() {
 			<< "-------------------\n"
 			<< "Your selection: ";
 
-		cin >> choice;
-
+		cin >> answer;
+		choice = stoi(answer);
+		
 		system("cls");
-
-		if (choice < 1 || choice > 3) {
-			cout << "Invaid selection! Please try again.\n";
+		try 
+		{
+			if (choice < 1 || choice > 3) {
+				throw myLimitException();
+			}
+			else
+			{
+				valid = true;
+			}
+		}
+		catch(myLimitException mLE)
+		{
+			cout << mLE.what();
 		}
 	}
 
@@ -49,18 +70,25 @@ void displayDeliveryMenu() {
 }
 
 void getAmount(string quantity, FreshProduct* item) {
+	bool valid = false;
 	double num = -1;
-	while (num < 0)
+	while (!valid)
 	{
-		cout << "How many " << quantity << " of " << item->getName() << endl;
-		cin >> num;
-		if (num < 0) {
-			system("cls");
-			cout << "Invalid amount";
-		}
+		//try {
+			cout << "How many " << quantity << " of " << item->getName() << endl;
+			cin >> num;
+			if (num < 0) {
+				system("cls");
+				cout << "Invalid amount";
+			}
+			item->setCount(num);
+			item->setPounds(num);
+			valid = true;
+		//}
+		//catch (myLimitException mLE) {
+			//cout << mLE.what();
+		//}
 	}
-	item->setCount(num);
-	item->setPounds(num);
 }
 void getAmount(MeasuredProduct* item) {
 	double num = -1;
@@ -112,7 +140,7 @@ void displayFresh() {
 		}
 
 		if (choice < 1 || choice > 4) {
-			cout << "Invaid selection! Please try again.\n";
+			throw exception("Input not an integer. Application will close");
 		}
 		else  if (choice != 4) {
 			getAmount("lbs", product);
@@ -156,7 +184,7 @@ void displayMeat() {
 		}
 
 		if (choice < 1 || choice > 4) {
-			cout << "Invaid selection! Please try again.\n";
+			throw exception("Input not an integer. Application will close");
 		}
 		else  if (choice != 4) {
 			getAmount("lbs", product);
@@ -200,7 +228,7 @@ void displayFrozen() {
 		}
 
 		if (choice < 1 || choice > 4) {
-			cout << "Invaid selection! Please try again.\n";
+			throw exception("Input not an integer. Application will close");
 		}
 		else  if (choice != 4) {
 			getAmount(product);
@@ -214,7 +242,7 @@ void displayFrozen() {
 void displayMainMenu() {
 	system("cls");
 	int choice = -1;
-
+	string answer;
 	do {
 		cout << "----- Main Menu ----\n"
 			<< "(1) Fresh Produce\n"
@@ -223,8 +251,8 @@ void displayMainMenu() {
 			<< "(4) Check Out\n"
 			<< "--------------------\n"
 			<< "Your selection: ";
-
-		cin >> choice;
+		cin >> answer;
+		choice = stoi(answer);
 
 		system("cls");
 
@@ -242,7 +270,7 @@ void displayMainMenu() {
 		}
 
 		if (choice < 1 || choice > 4) {
-			cout << "Invaid selection! Please try again.\n";
+			throw exception("Input not an integer. Application will close");
 		}
 	} while (choice != 4);
 	/*for (Item* item : cart) {
@@ -251,27 +279,36 @@ void displayMainMenu() {
 }
 
 int main()
-{	
-	displayDeliveryMenu();
-	total += Item::getTip() + Item::getDelivery();
-	displayMainMenu();
+{
+	// display menu works according to exception directions
+	try {
+		cout << "display menu works according to exception directions\n\n";
+		displayDeliveryMenu();
+		total += Item::getTip() + Item::getDelivery();
+		displayMainMenu();
 
 
-	for (Item* item : cart) {
-		cout << fixed
-			 << setprecision(2) << setw(14) << item->getName()
-			 << ":  $" << item->getPrice() << setw(8) 
-			 << "  x"<< item->Amount() << setw(8)
-			 << "$ " << item->getPrice()*item->Amount() << setw(7) << endl;
+		for (Item* item : cart) {
+			cout << fixed
+				 << setprecision(2) << setw(14) << item->getName()
+				 << ":  $" << item->getPrice() << setw(8) 
+				 << "  x"<< item->Amount() << setw(8)
+				 << "$ " << item->getPrice()*item->Amount() << setw(7) << endl;
+		}
+
+		cout << fixed << setprecision(2) << "\n"
+			 << setw(15) << "Tip:" << "  $" << setw(7) << Item::getTip() << "\n"
+			 << setw(15) << "Delivery:" << "  $" << setw(7) << Item::getDelivery() << "\n"
+			 << "\t _________________\n"
+			 << setprecision(2) << setw(18) << "Total:  $" << setw(7) << total;
+
 	}
-
-	cout << fixed << setprecision(2) << "\n"
-		 << setw(15) << "Tip:" << "  $" << setw(7) << Item::getTip() << "\n"
-		 << setw(15) << "Delivery:" << "  $" << setw(7) << Item::getDelivery() << "\n"
-		 << "\t _________________\n"
-		 << setprecision(2) << setw(18) << "Total:  $" << setw(7) << total;
-
+	catch (...)
+	{
+		cout << "Input not an integer. Application will close.";
+	}
 	char end = getchar();
 	end = getchar();
+
 	return 0;
 }
