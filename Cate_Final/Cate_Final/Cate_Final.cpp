@@ -91,20 +91,21 @@ void displayFresh() {
 		cin >> choice;
 
 		system("cls");
-
 		FreshProduct* product = new FreshProduct();
+
 		switch (choice) {
+		
 		case 1:
 			product->setName("Gala Apples");
-			product->setCost(3.99);
+			product->setPrice(3.99);
 			break;
 		case 2:
 			product->setName("Bananas");
-			product->setCost(.48);
+			product->setPrice(.48);
 			break;
 		case 3:
 			product->setName("Grapes");
-			product->setCost(2.99);
+			product->setPrice(2.99);
 			break;
 		}
 
@@ -113,7 +114,7 @@ void displayFresh() {
 		}
 		else  if (choice != 4) {
 			getAmount("lbs", product);
-			product->calcPrice();
+			product->calcFullPrice();
 			cart.push_back(product);
 		}
 	} while (choice != 4);
@@ -140,15 +141,15 @@ void displayMeat() {
 		switch (choice) {
 		case 1:
 			product->setName("Whole Chicken");
-			product->setCost(6.99);
+			product->setPrice(6.99);
 			break;
 		case 2:
 			product->setName("Ground beef");
-			product->setCost(4.99);
+			product->setPrice(4.99);
 			break;
 		case 3:
 			product->setName("Salmon");
-			product->setCost(9.99);
+			product->setPrice(9.99);
 			break;
 		}
 
@@ -157,7 +158,7 @@ void displayMeat() {
 		}
 		else  if (choice != 4) {
 			getAmount("lbs", product);
-			product->calcPrice();
+			product->calcFullPrice();
 			cart.push_back(product);
 		}
 	} while (choice != 4);
@@ -184,15 +185,15 @@ void displayFrozen() {
 		switch (choice) {
 		case 1:
 			product->setName("Waffles");
-			product->setCost(6.99);
+			product->setPrice(6.99);
 			break;
 		case 2:
 			product->setName("Pizza");
-			product->setCost(4.99);
+			product->setPrice(4.99);
 			break;
 		case 3:
 			product->setName("Popsicles");
-			product->setCost(2.99);
+			product->setPrice(2.99);
 			break;
 		}
 
@@ -201,7 +202,7 @@ void displayFrozen() {
 		}
 		else  if (choice != 4) {
 			getAmount(product);
-			product->calcPrice();
+			product->calcFullPrice();
 			cart.push_back(product);
 		}
 	} while (choice != 4);

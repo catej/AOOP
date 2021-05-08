@@ -5,8 +5,9 @@ class MeasuredProduct : public Item
 private:
 	double quantity;
 public:
-	void calcPrice();
+	double calcFullPrice();
 	void setQuantity(double);
 	double getQuantity();
 	MeasuredProduct();
+	int Amount();
 };

@@ -2,7 +2,7 @@
 
 Item::Item() {
 	this->price = 0;
-	this->cost = 0;
+	this->count = 0;
 }
 
 void Item::setTip(double tip) {
@@ -37,11 +37,11 @@ double Item::getPrice() {
 	return price;
 }
 
-void Item::setCost(double cost) {
-	this->cost = cost;
+int Item::getCount() {
+	return count;
+}
+void Item::setCount(int count) {
+	this->count = count;
 }
 
-double Item::getCost() {
-	return cost;
-}
 

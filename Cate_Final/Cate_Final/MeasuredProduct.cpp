@@ -12,6 +12,10 @@ double MeasuredProduct::getQuantity() {
 	return quantity;
 }
 
-void MeasuredProduct::calcPrice() {
-	setPrice(cost * quantity);
+double MeasuredProduct::calcFullPrice() {
+	return getPrice() * count;
+}
+
+int MeasuredProduct::Amount() {
+	return quantity;
 }

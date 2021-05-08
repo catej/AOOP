@@ -2,6 +2,7 @@
 
 FreshProduct::FreshProduct() {
 	this->pounds = 0;
+	this->count = 0;
 }
 
 double FreshProduct::getPounds() {
@@ -12,6 +13,10 @@ void FreshProduct::setPounds(double pounds) {
 	this->pounds = pounds;
 }
 
-void FreshProduct::calcPrice() {
-	setPrice(cost * pounds);
+double FreshProduct::calcFullPrice() {
+	return price * count;
+}
+
+int FreshProduct::Amount() {
+	return pounds;
 }

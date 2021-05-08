@@ -8,9 +8,10 @@ class FreshProduct : public Item
 private:
 	double pounds;
 public:
-	void calcPrice();
+	double calcFullPrice();
 	double getPounds();
 	void setPounds(double);
+	int Amount();
 	FreshProduct();
 };
 

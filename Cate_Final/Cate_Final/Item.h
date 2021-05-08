@@ -12,10 +12,12 @@ private:
 protected:
 	string name;
 	double price;
-	double cost;
-
+	int count;
+	
 public:
 	Item();
+	void setCount(int);
+	int getCount();
 	static void setTip(double);
 	static double getTip();
 	static void setDelivery(double);
@@ -24,12 +26,10 @@ public:
 	string getName();
 	void setPrice(double);
 	double getPrice();
-	void setCost(double);
-	double getCost();
 
 	// UPDATES FOR FINAL: Item is now an abstract class
 	virtual double calcFullPrice() = 0;
-	virtual int amount() = 0;
+	virtual int Amount() = 0;
 
 };
 
