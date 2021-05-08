@@ -59,6 +59,7 @@ void getAmount(string quantity, FreshProduct* item) {
 			cout << "Invalid amount";
 		}
 	}
+	item->setCount(num);
 	item->setPounds(num);
 }
 void getAmount(MeasuredProduct* item) {
@@ -72,6 +73,7 @@ void getAmount(MeasuredProduct* item) {
 			cout << "Invalid amount";
 		}
 	}
+	item->setCount(num);
 	item->setQuantity(num);
 }
 
@@ -101,7 +103,7 @@ void displayFresh() {
 			break;
 		case 2:
 			product->setName("Bananas");
-			product->setPrice(.48);
+			product->setPrice(.49);
 			break;
 		case 3:
 			product->setName("Grapes");
@@ -114,7 +116,7 @@ void displayFresh() {
 		}
 		else  if (choice != 4) {
 			getAmount("lbs", product);
-			product->calcFullPrice();
+			total += product->calcFullPrice();
 			cart.push_back(product);
 		}
 	} while (choice != 4);
@@ -158,7 +160,7 @@ void displayMeat() {
 		}
 		else  if (choice != 4) {
 			getAmount("lbs", product);
-			product->calcFullPrice();
+			total += product->calcFullPrice();
 			cart.push_back(product);
 		}
 	} while (choice != 4);
@@ -202,8 +204,9 @@ void displayFrozen() {
 		}
 		else  if (choice != 4) {
 			getAmount(product);
-			product->calcFullPrice();
+			total += product->calcFullPrice();
 			cart.push_back(product);
+			
 		}
 	} while (choice != 4);
 }
@@ -242,27 +245,31 @@ void displayMainMenu() {
 			cout << "Invaid selection! Please try again.\n";
 		}
 	} while (choice != 4);
-	for (Item* item : cart) {
+	/*for (Item* item : cart) {
 		total += item->getPrice();
-	}
+	}*/
 }
 
 int main()
-{
+{	
 	displayDeliveryMenu();
+	total += Item::getTip() + Item::getDelivery();
 	displayMainMenu();
 
-	total += Item::getTip() + Item::getDelivery();
 
 	for (Item* item : cart) {
-		cout << fixed << setprecision(2) << setfill(' ') << setw(14) << item->getName() << ":  $" << setfill(' ') << setw(7) << item->getPrice() << endl;
+		cout << fixed
+			 << setprecision(2) << setw(14) << item->getName()
+			 << ":  $" << item->getPrice() << setw(8) 
+			 << "  x"<< item->Amount() << setw(8)
+			 << "$ " << item->getPrice()*item->Amount() << setw(7) << endl;
 	}
 
 	cout << fixed << setprecision(2) << "\n"
-		<< setfill(' ') << setw(15) << "Tip:" << "  $" << setfill(' ') << setw(7) << Item::getTip() << "\n"
-		<< setfill(' ') << setw(15) << "Delivery:" << "  $" << setfill(' ') << setw(7) << Item::getDelivery() << "\n"
-		<< "--------------------------\n"
-		<< setfill(' ') << setw(18) << "Total:  $" << setfill(' ') << setw(7) << total;
+		 << setw(15) << "Tip:" << "  $" << setw(7) << Item::getTip() << "\n"
+		 << setw(15) << "Delivery:" << "  $" << setw(7) << Item::getDelivery() << "\n"
+		 << "\t _________________\n"
+		 << setprecision(2) << setw(18) << "Total:  $" << setw(7) << total;
 
 	char end = getchar();
 	end = getchar();

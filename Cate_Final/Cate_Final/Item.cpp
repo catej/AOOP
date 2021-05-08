@@ -43,5 +43,11 @@ int Item::getCount() {
 void Item::setCount(int count) {
 	this->count = count;
 }
+void Item::setCost(double cost) {
+	this->cost = cost;
+}
 
+double Item::getCost() {
+	return cost;
+}
 

@@ -13,6 +13,7 @@ protected:
 	string name;
 	double price;
 	int count;
+	double cost;
 	
 public:
 	Item();
@@ -26,6 +27,8 @@ public:
 	string getName();
 	void setPrice(double);
 	double getPrice();
+	void setCost(double);
+	double getCost();
 
 	// UPDATES FOR FINAL: Item is now an abstract class
 	virtual double calcFullPrice() = 0;
