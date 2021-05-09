@@ -24,13 +24,13 @@ double total = 0;
 class myLimitException : public exception {
 public:
 	const char* what() const noexcept override {
-		return "error detected\nIncorrect integer input. Please try again.\n";
+		return "error detected!\nIncorrect integer input. Please try again.\n";
 	}
 };
 class NotAValidNumber : public exception {
 public:
 	const char* what() const noexcept override {
-		return "Input not an integer. Application will close.\n";
+		return "error detected!\nInput not an integer. Application will close.\n";
 	}
 };
 
@@ -87,42 +87,57 @@ bool displayDeliveryMenu() {
 
 void getAmount(string quantity, FreshProduct* item) {
 	bool valid = false;
-	double num = -1;
+	double num;
+	string answer;
 	while (!valid)
 	{
-		//try {
+		try {
+
 			cout << "How many " << quantity << " of " << item->getName() << endl;
-			cin >> num;
+			cin >> answer;
+			num = stoi(answer);
 			if (num < 0) {
-				system("cls");
-				cout << "Invalid amount";
+				throw myLimitException();
 			}
 			item->setCount(num);
 			item->setPounds(num);
 			valid = true;
-		//}
-		//catch (myLimitException mLE) {
-			//cout << mLE.what();
-		//}
+		}
+		catch (myLimitException e){
+			cout << e.what();
+		}
+		catch (...) {
+			throw NotAValidNumber();
+		}
 	}
 }
 void getAmount(MeasuredProduct* item) {
-	double num = -1;
-	while (num < 0)
+	double num;
+	string answer;
+	bool valid = false;
+	while (!valid)
 	{
-		cout << "How many " << item->getName() << endl;
-		cin >> num;
-		if (num < 0) {
-			system("cls");
-			cout << "Invalid amount";
+		try {
+			cout << "How many " << item->getName() << endl;
+			cin >> answer;
+			num = stoi(answer);
+			if (num < 0) {
+				throw myLimitException();
+			}
+			item->setCount(num);
+			item->setQuantity(num);
+			valid = true;
+		}
+		catch (myLimitException e) {
+			cout << e.what();
+		}
+		catch (...) {
+			throw NotAValidNumber();
 		}
 	}
-	item->setCount(num);
-	item->setQuantity(num);
 }
 
 void displayFresh() {
-	system("cls");
 	int choice;
 	string answer;
 	bool valid = false;
@@ -136,7 +151,7 @@ void displayFresh() {
 			 << "---------------------------\n"
 			 << "Your selection: ";
 
-		cin >> choice;
+		cin >> answer;
 
 		system("cls");
 		FreshProduct* product = new FreshProduct();
@@ -159,6 +174,7 @@ void displayFresh() {
 					break;
 				case 4:
 					valid = true;
+					break;
 				default:
 					throw myLimitException();
 					break;
@@ -177,6 +193,7 @@ void displayFresh() {
 		catch (...) {
 			throw NotAValidNumber();
 		}
+		
 	} while (!valid);
 }
 
@@ -195,7 +212,7 @@ void displayMeat() {
 			<< "---------------------------\n"
 			<< "Your selection: ";
 
-		cin >> choice;
+		cin >> answer;
 
 		system("cls");
 
@@ -219,6 +236,7 @@ void displayMeat() {
 					break;
 				case 4:
 					valid = true;
+					break;
 				default:
 					throw myLimitException();
 					break;
@@ -242,6 +260,8 @@ void displayMeat() {
 void displayFrozen() {
 	system("cls");
 	int choice = -1;
+	string answer;
+	bool valid = false;
 
 	do {
 		cout << "------- Frozen Menu ------\n"
@@ -252,44 +272,59 @@ void displayFrozen() {
 			<< "---------------------------\n"
 			<< "Your selection: ";
 
-		cin >> choice;
+		cin >> answer;
 
 		system("cls");
-
 		MeasuredProduct* product = new MeasuredProduct();
-		switch (choice) {
-		case 1:
-			product->setName("Waffles");
-			product->setPrice(6.99);
-			break;
-		case 2:
-			product->setName("Pizza");
-			product->setPrice(4.99);
-			break;
-		case 3:
-			product->setName("Popsicles");
-			product->setPrice(2.99);
-			break;
-		}
 
-		if (choice < 1 || choice > 4) {
-			throw exception("Input not an integer. Application will close");
+		try
+		{
+			choice = stoi(answer);
+
+			switch (choice) {
+				case 1:
+					product->setName("Waffles");
+					product->setPrice(6.99);
+					break;
+				case 2:
+					product->setName("Pizza");
+					product->setPrice(4.99);
+					break;
+				case 3:
+					product->setName("Popsicles");
+					product->setPrice(2.99);
+					break;
+				case 4:
+					valid = true;
+					break;
+				default:
+					throw myLimitException();
+					break;
+			}
+			if (choice != 4) {
+				getAmount(product);
+				total += product->calcFullPrice();
+				cart.push_back(product);
+			}
 		}
-		else  if (choice != 4) {
-			getAmount(product);
-			total += product->calcFullPrice();
-			cart.push_back(product);
-			
+		catch (myLimitException mLE)
+		{
+			cout << mLE.what();
 		}
-	} while (choice != 4);
+		catch (...) {
+			throw NotAValidNumber();
+		}
+	} while (!valid);
 }
 
 void displayMainMenu() {
+
 	system("cls");
-	int choice = -1;
-	string answer;
 	bool valid = false;
 	do {
+		int choice;
+		string answer;
+
 		cout << "----- Main Menu ----\n"
 			<< "(1) Fresh Produce\n"
 			<< "(2) Meat and Seafood\n"
@@ -297,6 +332,7 @@ void displayMainMenu() {
 			<< "(4) Check Out\n"
 			<< "--------------------\n"
 			<< "Your selection: ";
+
 		cin >> answer;
 		
 		system("cls");
@@ -317,6 +353,7 @@ void displayMainMenu() {
 					break;
 				case 4:
 					valid = true;
+					break;
 				default:
 					throw myLimitException();
 					break;
@@ -338,21 +375,28 @@ int main()
 	try {
 
 		if (displayDeliveryMenu()) {
+			
 			displayMainMenu();
-			for (Item* item : cart) {
-				cout << fixed
-					 << setprecision(2) << setw(14) << item->getName()
-					 << ":  $" << item->getPrice() << setw(8) 
-					 << "  x"<< item->Amount() << setw(8)
-					 << "$ " << item->getPrice()*item->Amount() << setw(7) << endl;
+			
+			if (!cart.empty()){
+				for (Item* item : cart) {
+					cout << fixed
+							<< setprecision(2) << setw(14) << item->getName()
+							<< ":  $" << item->getPrice() << setw(8) 
+							<< "  x"<< item->Amount() << setw(8)
+							<< "$ " << item->getPrice()*item->Amount() << setw(7) << endl;
+				}
+
+				cout << fixed << setprecision(2) << "\n"
+						<< setw(15) << "Tip:" << "  $" << setw(7) << Item::getTip() << "\n"
+						<< setw(15) << "Delivery:" << "  $" << setw(7) << Item::getDelivery() << "\n"
+						<< "\t _________________\n"
+						<< setprecision(2) << setw(18) << "Total:  $" << setw(7) << total;
 			}
-
-			cout << fixed << setprecision(2) << "\n"
-				 << setw(15) << "Tip:" << "  $" << setw(7) << Item::getTip() << "\n"
-				 << setw(15) << "Delivery:" << "  $" << setw(7) << Item::getDelivery() << "\n"
-				 << "\t _________________\n"
-				 << setprecision(2) << setw(18) << "Total:  $" << setw(7) << total;
-
+			else {
+				cout << "Cart is empty. ";
+				cout << "Sorry to see you go.";
+			}
 		}
 		else {
 			cout << "Sorry to see you go.";
