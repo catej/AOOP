@@ -50,16 +50,12 @@ bool displayDeliveryMenu() {
 			<< "Your selection: ";
 
 		cin >> answer;
-		try {
-			choice = stoi(answer);
-		}
-		catch(...){
-			throw NotAValidNumber();
-		}
 		
 		system("cls");
+		
 		try 
 		{
+			choice = stoi(answer);
 			switch (choice) {
 				case 1:
 					valid = true;
@@ -69,6 +65,7 @@ bool displayDeliveryMenu() {
 					Item::setTip(5);
 					total += Item::getTip() + Item::getDelivery();
 					valid = true;
+					break;
 				case 3:
 					return false;
 					break;
@@ -81,6 +78,9 @@ bool displayDeliveryMenu() {
 		catch(myLimitException mLE)
 		{
 			cout << mLE.what();
+		}
+		catch(...){
+			throw NotAValidNumber();
 		}
 	}
 }
@@ -123,7 +123,7 @@ void getAmount(MeasuredProduct* item) {
 
 void displayFresh() {
 	system("cls");
-	int choice = -1;
+	int choice;
 	string answer;
 	bool valid = false;
 	
@@ -142,8 +142,7 @@ void displayFresh() {
 		FreshProduct* product = new FreshProduct();
 
 		try {
-			if (choice < 1 || choice > 4) {
-			}
+			choice = stoi(answer);
 			switch (choice) {
 		
 				case 1:
@@ -171,8 +170,12 @@ void displayFresh() {
 				cart.push_back(product);
 			}
 		}
-		catch (myLimitException e) {
-			cout << e.what();
+		catch (myLimitException mLE)
+		{
+			cout << mLE.what();
+		}
+		catch (...) {
+			throw NotAValidNumber();
 		}
 	} while (!valid);
 }
@@ -270,6 +273,7 @@ void displayMainMenu() {
 	system("cls");
 	int choice = -1;
 	string answer;
+	bool valid = false;
 	do {
 		cout << "----- Main Menu ----\n"
 			<< "(1) Fresh Produce\n"
@@ -280,26 +284,37 @@ void displayMainMenu() {
 			<< "Your selection: ";
 		cin >> answer;
 		
-		choice = stoi(answer);
 		system("cls");
 
+		try
+		{
+			choice = stoi(answer);
 
-		switch (choice) {
-		case 1:
-			displayFresh();
-			break;
-		case 2:
-			displayMeat();
-			break;
-		case 3:
-			displayFrozen();
-			break;
+			switch (choice) {
+				case 1:
+					displayFresh();
+					break;
+				case 2:
+					displayMeat();
+					break;
+				case 3:
+					displayFrozen();
+					break;
+				case 4:
+					valid = true;
+				default:
+					throw myLimitException();
+					break;
+			}
 		}
-
-		if (choice < 1 || choice > 4) {
-			throw exception("Input not an integer. Application will close");
+		catch (myLimitException mLE)
+		{
+			cout << mLE.what();
 		}
-	} while (choice != 4);
+		catch (...) {
+			throw NotAValidNumber();
+		}
+	} while (!valid);
 }
 
 int main()
