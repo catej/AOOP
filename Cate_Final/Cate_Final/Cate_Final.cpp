@@ -183,6 +183,8 @@ void displayFresh() {
 void displayMeat() {
 	system("cls");
 	int choice = -1;
+	string answer;
+	bool valid = false;
 
 	do {
 		cout << "-------- Meat Menu -------\n"
@@ -198,30 +200,43 @@ void displayMeat() {
 		system("cls");
 
 		FreshProduct* product = new FreshProduct();
-		switch (choice) {
-		case 1:
-			product->setName("Whole Chicken");
-			product->setPrice(6.99);
-			break;
-		case 2:
-			product->setName("Ground beef");
-			product->setPrice(4.99);
-			break;
-		case 3:
-			product->setName("Salmon");
-			product->setPrice(9.99);
-			break;
-		}
+		try
+		{
+			choice = stoi(answer);
 
-		if (choice < 1 || choice > 4) {
-			throw exception("Input not an integer. Application will close");
+			switch (choice) {
+				case 1:
+					product->setName("Whole Chicken");
+					product->setPrice(6.99);
+					break;
+				case 2:
+					product->setName("Ground beef");
+					product->setPrice(4.99);
+					break;
+				case 3:
+					product->setName("Salmon");
+					product->setPrice(9.99);
+					break;
+				case 4:
+					valid = true;
+				default:
+					throw myLimitException();
+					break;
+			}
+			if (choice != 4) {
+				getAmount("lbs", product);
+				total += product->calcFullPrice();
+				cart.push_back(product);
+			}
 		}
-		else  if (choice != 4) {
-			getAmount("lbs", product);
-			total += product->calcFullPrice();
-			cart.push_back(product);
+		catch (myLimitException mLE)
+		{
+			cout << mLE.what();
 		}
-	} while (choice != 4);
+		catch (...) {
+			throw NotAValidNumber();
+		}
+	} while (!valid);
 }
 
 void displayFrozen() {
